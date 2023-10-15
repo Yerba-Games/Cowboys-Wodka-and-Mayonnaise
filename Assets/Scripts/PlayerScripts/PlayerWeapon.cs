@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using NaughtyAttributes;
 
 //Jeba³em siê z tym 4 godziny ale dzia³a wiec lepeij tu ju¿ nic nie zmieniaæ
 
@@ -9,11 +10,16 @@ public class PlayerWeapon : MonoBehaviour
 {
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
+    [SerializeField] GameObject bullet,gunEnd;
+    [SerializeField] float bulletSpeed;
+    [SerializeField] float magazine=6,relodeTime=2;
+    [ShowNonSerializedField]private float currentMagazine;
+    private bool isReloding;
 
     private Camera mainCamera;
     Inputs inputs; //popiêcie do klasy z inputem
     private InputAction mousePositon;
-
+    #region Input ini
     private void Awake()
     {
         inputs = new Inputs();
@@ -22,22 +28,56 @@ public class PlayerWeapon : MonoBehaviour
     {
         inputs.Player.Enable();
         mousePositon = inputs.Player.GunRotation;
+        inputs.Player.Fire.started += Shoot;
+
     }
     private void OnDisable()
     {
         inputs.Player.Disable();
+        inputs.Player.Fire.started -= Shoot;
     }
+    #endregion
     private void Start()
     {
         mainCamera = Camera.main;
+        currentMagazine = magazine;
     }
 
     private void Update()
     {
         Aim();
     }
+    #region shooting and reloding
+    void Shoot(InputAction.CallbackContext obj)
+    {
+        if (!isReloding) 
+        {
+            bullet.GetComponent<bulletScript>().bulletSpeed = bulletSpeed;
+            Debug.Log("piu");
+            GameObject tempBullet = Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
+            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
+            Relode();
+        }
 
-
+        
+    }
+    private void Relode()
+    {
+        currentMagazine--;
+        if (currentMagazine< 0)
+        {
+            isReloding=true;
+            StartCoroutine(Reloding());
+        }
+    }
+    IEnumerator Reloding()
+    {
+        yield return new WaitForSeconds(relodeTime);
+        currentMagazine = magazine;
+        isReloding = false;
+    }
+    #endregion
+    #region aiming
     private void Aim()
     {
         var (success, position) = GetMousePosition();
@@ -68,5 +108,5 @@ public class PlayerWeapon : MonoBehaviour
             return (success: false, position: Vector3.zero);
         }
     }
+    #endregion
 }
-

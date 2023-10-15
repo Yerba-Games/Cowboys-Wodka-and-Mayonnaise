@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2156.8298, g: 2259.991, b: 3280.4937, a: 1}
+  m_IndirectSpecularColor: {r: 2158.8132, g: 2261.6309, b: 3281.6768, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -608,7 +608,8 @@ Transform:
   m_LocalPosition: {x: 1.081, y: 0.082, z: -1.93}
   m_LocalScale: {x: 1, y: 0.5, z: 1.81}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1349685701}
   m_Father: {fileID: 1110472971}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &968577412
@@ -698,6 +699,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   aimToY: 0
+  bullet: {fileID: 4964233160814628209, guid: cb50692c9b6165542aa70ef5f6e0d231, type: 3}
+  gunEnd: {fileID: 1349685700}
+  bulletSpeed: 15
 --- !u!1 &1110472966
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +805,7 @@ Transform:
   m_GameObject: {fileID: 1110472966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6169243, y: 0.63, z: 0.9128299}
+  m_LocalPosition: {x: -0.03, y: 0.63, z: 0.9128299}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -848,6 +852,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1 &1349685700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349685701}
+  m_Layer: 0
+  m_Name: gunEnd
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349685701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349685700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.868}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 968577411}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
