@@ -4,17 +4,9 @@ using UnityEngine;
 
 public class aimLayerFollow : MonoBehaviour
 {
-    [SerializeField] GameObject playerCharacter;
-    private Transform playerPositon;
-    // Start is called before the first frame update
-    void Start()
-    {
-        playerPositon=playerCharacter.transform;
-    }
-
-    // Update is called once per frame
+    [SerializeField] Transform playerCharacterPositon;
     void Update()
     {
-        transform.position = playerPositon.position;
+        transform.position = playerCharacterPositon.position;
     }
 }
