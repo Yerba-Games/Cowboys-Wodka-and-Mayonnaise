@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] float bulletSpeed;
-    [SerializeField] float magazine=6,relodeTime=2;
+    [SerializeField] int magazine=6,relodeTime=2;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
 
@@ -87,8 +87,6 @@ public class PlayerWeapon : MonoBehaviour
             var direction = position - transform.position;
             // Ignore the height difference.
             if (!aimToY) {direction.y = 0; }
-
-            // Make the transform look in the direction.
             transform.forward = direction;
         }
     }
@@ -99,12 +97,10 @@ public class PlayerWeapon : MonoBehaviour
 
         if (Physics.Raycast(ray, out var hitInfo, Mathf.Infinity, groundMask))
         {
-            // The Raycast hit something, return with the position.
             return (success: true, position: hitInfo.point);
         }
         else
         {
-            // The Raycast did not hit anything.
             return (success: false, position: Vector3.zero);
         }
     }
