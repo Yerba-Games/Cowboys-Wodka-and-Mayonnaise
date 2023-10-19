@@ -28,10 +28,11 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] float bulletSpeed;
-    [SerializeField] int magazine=6,relodeTime=2;
+    [SerializeField] int magazine=6,relodeTime=2,WeaponDamage=10;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
     public static float bulletSingletonSpeed;
+    public static int PlayerWeaponDamage;
 
     private Camera mainCamera;
     Inputs inputs; //popiêcie do klasy z inputem
@@ -55,6 +56,7 @@ public class PlayerWeapon : MonoBehaviour
         mainCamera = Camera.main;
         currentMagazine = magazine;
         bulletSingletonSpeed = bulletSpeed;
+        PlayerWeaponDamage = WeaponDamage;
     }
 
     private void Update()

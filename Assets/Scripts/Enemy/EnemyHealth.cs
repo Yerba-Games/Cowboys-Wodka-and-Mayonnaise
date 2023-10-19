@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : Health
+public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int health=30;
+    [SerializeField]EnemyScriptableObject enemyScriptableObject;
+    int health;
+    float speed;
+    bool canMove;
     // Start is called before the first frame update
     void Start()
     { 
+        health = enemyScriptableObject.health;
+        speed = enemyScriptableObject.speed;
+        canMove = enemyScriptableObject.canMove;
     }
 
     // Update is called once per frame
@@ -15,12 +21,12 @@ public class EnemyHealth : Health
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    public void Hit(int damage)
     {
-        if (collision.gameObject.tag == "PlayerBullet" || collision.gameObject.tag == "PlayerMelee")
+        health -= damage;
+        if (health <= 0)
         {
-            Damage(10, health);
+            Destroy(gameObject);
         }
-
     }
 }
