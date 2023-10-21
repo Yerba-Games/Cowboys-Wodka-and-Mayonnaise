@@ -7,7 +7,8 @@ using UnityEngine;
 public class EnemyScriptableObject : ScriptableObject
 {
     public int health;
-    [Range(1,100)]public int damage;
-    public float speed;
+    [Range(1, 100)]public int damage;
+    [Range(3,20)]public float speed=3.5f;
+    [Range(3,10)]public float stopingDistance = 3f;
     public bool canMove;
 }

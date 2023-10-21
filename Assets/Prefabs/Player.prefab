@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1009659312132988989}
   - component: {fileID: 5736817705349025573}
   - component: {fileID: 5344495267324521617}
-  - component: {fileID: 4409285714149454938}
   - component: {fileID: 8115148050660585537}
   m_Layer: 0
   m_Name: gun
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 754579944064972229}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.081, y: 0.082, z: -1.93}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 1.81}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -86,27 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4409285714149454938
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754579944064972229}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.5325565, y: 1, z: 1}
-  m_Center: {x: 0.2662784, y: 0, z: 0}
 --- !u!114 &8115148050660585537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,10 +103,9 @@ MonoBehaviour:
   aimToY: 0
   bullet: {fileID: 4964233160814628209, guid: cb50692c9b6165542aa70ef5f6e0d231, type: 3}
   gunEnd: {fileID: 4735163132887561792}
-  bulletSpeed: 15
+  bulletSpeedStat: {fileID: 11400000, guid: b246cf6a22c31b74ea9d02ac64d1e092, type: 2}
   magazine: 6
   relodeTime: 2
-  WeaponDamage: 10
 --- !u!1 &2245586133529719523
 GameObject:
   m_ObjectHideFlags: 0

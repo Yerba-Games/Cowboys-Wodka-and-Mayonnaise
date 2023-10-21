@@ -8,36 +8,22 @@ using NaughtyAttributes;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    #region Singleton
-    private static PlayerWeapon _instance;
-    public static PlayerWeapon Instance => _instance;
-    private void Awake()
-    {
-        if (_instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-        inputs = new Inputs();
-    }
-    #endregion
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
-    [SerializeField] float bulletSpeed;
-    [SerializeField] int magazine=6,relodeTime=2,WeaponDamage=10;
+    [SerializeField] BulletScriptableObject bulletSpeedStat;
+    float bulletSpeed;
+    [SerializeField] int magazine=6,relodeTime=2;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
-    public static float bulletSingletonSpeed;
-    public static int PlayerWeaponDamage;
-
     private Camera mainCamera;
     Inputs inputs; //popiêcie do klasy z inputem
     private InputAction mousePositon;
     #region Input ini
+    private void Awake()
+    {
+        inputs = new Inputs();
+    }
     private void OnEnable()
     {
         inputs.Player.Enable();
@@ -55,8 +41,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         mainCamera = Camera.main;
         currentMagazine = magazine;
-        bulletSingletonSpeed = bulletSpeed;
-        PlayerWeaponDamage = WeaponDamage;
+        bulletSpeed = bulletSpeedStat.speed;
     }
 
     private void Update()

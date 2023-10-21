@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   damage: 30
-  speed: 0
-  canMove: 0
+  speed: 3.5
+  stopingDistance: 3
+  canMove: 1

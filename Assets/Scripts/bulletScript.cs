@@ -26,14 +26,14 @@ public class bulletScript : MonoBehaviour
     {
         if (isPlayersBullet)
         {
-            collision.gameObject.SendMessage("Hit", damage, 0);
+            collision.gameObject.SendMessage("Hit", damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
             Debug.Log($@"{gameObject.name} hit");
             return;
         }
         if (!isPlayersBullet)
         {
-            collision.gameObject.SendMessage("EnemyHit", damage, 0);
+            collision.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
             Debug.Log($@"{gameObject.name} hit");
             return;
