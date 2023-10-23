@@ -11,4 +11,5 @@ public class EnemyScriptableObject : ScriptableObject
     [Range(3,20)]public float speed=3.5f;
     [Range(3,10)]public float stopingDistance = 3f;
     public bool canMove;
+    public int attackDelay;
 }

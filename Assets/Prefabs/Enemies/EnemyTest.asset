@@ -17,3 +17,4 @@ MonoBehaviour:
   speed: 3.5
   stopingDistance: 3
   canMove: 1
+  attackDelay: 3
