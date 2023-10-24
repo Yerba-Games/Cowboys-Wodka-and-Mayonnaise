@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     float speed;
     bool canMove;
     GameObject model;
+    GameObject enemyModel;
     // Start is called before the first frame update
     void Start()
     { 
@@ -16,8 +17,8 @@ public class EnemyHealth : MonoBehaviour
         speed = enemyScriptableObject.speed;
         canMove = enemyScriptableObject.canMove;
         model = enemyScriptableObject.enemyModel;
-        model.SetActive(true);
-        model.transform.SetParent(transform,true);
+        Instantiate(model, transform);
+        //enemyModel.transform.SetParent(transform);
         
     }
 
