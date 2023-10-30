@@ -16,11 +16,8 @@ public class bulletScript : MonoBehaviour
         speed=bulletStats.speed;
         damage=bulletStats.damage;
         isPlayersBullet = bulletStats.isPlayersBullet;
-    }
-    void Update()
-    { 
-        Vector3 force = speed*transform.forward*Time.deltaTime;
-        rb.AddForce(force);
+        rb.drag = 0;
+        rb.velocity = speed * transform.forward;
     }
     private void OnCollisionEnter(Collision collision)
     {

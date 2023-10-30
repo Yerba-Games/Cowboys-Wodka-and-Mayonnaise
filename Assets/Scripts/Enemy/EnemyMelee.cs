@@ -16,7 +16,7 @@ public class EnemyMelee : MonoBehaviour
        attackDelay=enemyStats.attackDelay;
         damage=enemyStats.damage;
         playerPositon = PlayerGetTransform.playerTransform;
-        maxDistans = enemyStats.stopingDistance;
+        maxDistans = enemyStats.stopingDistance+1f;
     }
     private void Update()
     {
@@ -29,8 +29,7 @@ public class EnemyMelee : MonoBehaviour
         {
             Ray ray= new Ray(transform.position, playerPositon.position);
             RaycastHit hit;
-            Physics.Raycast(ray, out hit);
-            if (Physics.Raycast(transform.position,playerPositon.position,maxDistans)) 
+            if (Physics.Raycast(ray,out hit,maxDistans)) 
             {
                 canAttack = false;
                 StartCoroutine(Attack(hit.collider.gameObject));

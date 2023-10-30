@@ -55,7 +55,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             Debug.Log("piu");
             GameObject tempBullet = Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
-            tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
+            //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
             Relode();
         }
 
