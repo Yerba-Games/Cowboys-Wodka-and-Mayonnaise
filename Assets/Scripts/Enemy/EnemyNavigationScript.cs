@@ -9,7 +9,7 @@ public class EnemyNavigationScript : MonoBehaviour
     [SerializeField]EnemyScriptableObject enemyStats;
     NavMeshAgent agent;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.speed = enemyStats.speed;
