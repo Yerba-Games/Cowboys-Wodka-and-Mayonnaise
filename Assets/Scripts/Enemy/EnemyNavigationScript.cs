@@ -11,7 +11,6 @@ public class EnemyNavigationScript : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        player = PlayerGetTransform.playerTransform;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = enemyStats.speed;
         agent.stoppingDistance = enemyStats.stopingDistance;

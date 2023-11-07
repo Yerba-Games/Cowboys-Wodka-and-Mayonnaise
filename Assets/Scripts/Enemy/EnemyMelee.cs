@@ -16,7 +16,7 @@ public class EnemyMelee : MonoBehaviour
        attackDelay=enemyStats.attackDelay;
         damage=enemyStats.damage;
         playerPositon = PlayerGetTransform.playerTransform;
-        maxDistans = enemyStats.stopingDistance+1.5f;
+        maxDistans = enemyStats.stopingDistance+1f;
     }
     private void Update()
     {
@@ -31,7 +31,6 @@ public class EnemyMelee : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray,out hit,maxDistans)) 
             {
-                Debug.Log("Attacking");
                 canAttack = false;
                 StartCoroutine(Attack(hit.collider.gameObject));
             }
@@ -54,7 +53,6 @@ public class EnemyMelee : MonoBehaviour
         Debug.Log("atacking faze 2");
         target.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
         yield return new WaitForSeconds(attackDelay);
-        Debug.Log($@"cooldown stoped at {Time.time}");
         canAttack = true;
     }
 }

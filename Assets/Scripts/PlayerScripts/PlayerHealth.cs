@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyAttributes;
 
 public class PlayerHealth : MonoBehaviour
 {
     //¯ycie proste jest jak budowa T-55, bo jestem iñ¿ynierem trzymam zaciœniêt¹ piêœæ
-    [SerializeField][ProgressBar("Health",100,EColor.Red)]int health=100;
+    [SerializeField]int health=100;
     // Start is called before the first frame update
     void Start()
     {
