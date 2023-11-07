@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 
-//Jeba³em siê z tym 4 godziny ale dzia³a wiec lepeij tu ju¿ nic nie zmieniaæ
+//Jebaï¿½em siï¿½ z tym 4 godziny ale dziaï¿½a wiec lepeij tu juï¿½ nic nie zmieniaï¿½
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class PlayerWeapon : MonoBehaviour
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
     private Camera mainCamera;
-    Inputs inputs; //popiêcie do klasy z inputem
+    Inputs inputs; //popiï¿½cie do klasy z inputem
     private InputAction mousePositon;
     #region Input ini
     private void Awake()
