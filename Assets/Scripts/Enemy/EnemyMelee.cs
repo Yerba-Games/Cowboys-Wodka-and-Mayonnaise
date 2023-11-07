@@ -22,29 +22,28 @@ public class EnemyMelee : MonoBehaviour
     }
     private void Update()
     {
-        Debug.DrawRay(transform.position, playerPositon.position);
+        //Debug.DrawRay(transform.position, playerPositon.position);
         
     }
     private void FixedUpdate()
     {
         if (canAttack)
         {
-            RaycastHit hit;
-            Ray ray = new Ray(transform.position, playerPositon.position);
-            Physics.Raycast(ray, out hit);
+            //RaycastHit hit;
+            //Ray ray = new Ray(transform.position, playerPositon.position);
+            //Physics.Raycast(ray, out hit);
 
-            if (Physics.Raycast(ray, out hit, maxDistans))
+            //if (Physics.Raycast(ray, out hit, maxDistans))
+            //{
+            //    Debug.Log("Attacking");
+            //    canAttack = false;
+            //    StartCoroutine(Attack(hit.collider.gameObject));
+            //}
+            if (Vector3.Distance(transform.position,playerPositon.position)<=maxDistans)
             {
                 Debug.Log("Attacking");
-                canAttack = false;
-                StartCoroutine(Attack(hit.collider.gameObject));
+                StartCoroutine(Attack(playerPositon.gameObject));
             }
-           // if (System.Math.Abs(transform.position.x - playerPositon.position.x) <= maxDistans
-           //|| System.Math.Abs(transform.position.z - playerPositon.position.z) <= maxDistans)
-           // {
-           //     Debug.Log("Attacking");
-           //     StartCoroutine(Attack(hit.collider.gameObject));
-           // }
         }
 
     }

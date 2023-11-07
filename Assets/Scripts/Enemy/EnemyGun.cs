@@ -39,10 +39,7 @@ public class EnemyGun : MonoBehaviour
             //    Debug.Log("Attacking");
             //    Shoot();
             //}
-            if (transform.position.x - playerPositon.position.x <= maxDistans
-            || playerPositon.position.x - transform.position.x <= maxDistans
-            || playerPositon.position.z - transform.position.z <= maxDistans
-            || transform.position.z - playerPositon.position.z <= maxDistans) 
+            if (Vector3.Distance(transform.position, playerPositon.position) <= maxDistans) 
             {
                 Debug.Log("Attacking");
                 Shoot();
