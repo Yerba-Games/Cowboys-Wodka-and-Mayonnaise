@@ -18,7 +18,7 @@ public class EnemyMelee : MonoBehaviour
        attackDelay=enemyStats.attackDelay;
         damage=enemyStats.damage;
         playerPositon = PlayerGetTransform.playerTransform;
-        maxDistans = enemyStats.stopingDistance+1.5f;
+        maxDistans = enemyStats.stopingDistance;
     }
     private void Update()
     {
@@ -30,23 +30,21 @@ public class EnemyMelee : MonoBehaviour
         if (canAttack)
         {
             RaycastHit hit;
-            Ray ray= new Ray(transform.position, playerPositon.position);
+            Ray ray = new Ray(transform.position, playerPositon.position);
             Physics.Raycast(ray, out hit);
 
-            //if (Physics.Raycast(ray,out hit,maxDistans)) 
-            //{
-            //    Debug.Log("Attacking");
-            //    canAttack = false;
-            //    StartCoroutine(Attack(hit.collider.gameObject));
-            //}
-            if (transform.position.x - playerPositon.position.x <= maxDistans
-           || playerPositon.position.x - transform.position.x <= maxDistans
-           || playerPositon.position.z - transform.position.z <= maxDistans
-           || transform.position.z - playerPositon.position.z <= maxDistans)
+            if (Physics.Raycast(ray, out hit, maxDistans))
             {
                 Debug.Log("Attacking");
+                canAttack = false;
                 StartCoroutine(Attack(hit.collider.gameObject));
             }
+           // if (System.Math.Abs(transform.position.x - playerPositon.position.x) <= maxDistans
+           //|| System.Math.Abs(transform.position.z - playerPositon.position.z) <= maxDistans)
+           // {
+           //     Debug.Log("Attacking");
+           //     StartCoroutine(Attack(hit.collider.gameObject));
+           // }
         }
 
     }
