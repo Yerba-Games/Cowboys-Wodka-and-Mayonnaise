@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c7dce95e-4e2e-466e-8718-a9617a3c90da}">
+		<property name="assetPath">
+			<value>grzegorz brzeczyszczykiewicz.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>114.84226757369615</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8575e400-ea7c-4f6a-811f-129683f544bc}</destination>
+		</relationship>
+	</object>
+</objects>
