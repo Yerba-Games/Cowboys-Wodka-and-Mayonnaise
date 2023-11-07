@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{902950cd-6ad2-49b5-9bd6-7c04331c61c7}">
+		<property name="assetPath">
+			<value>695384__fmaudio__male-death-cry-1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.61479166666666663</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8575e400-ea7c-4f6a-811f-129683f544bc}</destination>
+		</relationship>
+	</object>
+</objects>
