@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
+using FMODUnity;
 
 //Jeba�em si� z tym 4 godziny ale dzia�a wiec lepeij tu ju� nic nie zmienia�
 
@@ -12,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine=6,relodeTime=2;
+    [SerializeField] private EventReference playerGunShootSound;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
     private Camera mainCamera;
@@ -52,6 +54,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             Debug.Log("piu");
             Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
+            AudioManager.instance.PlayOneShot(playerGunShootSound, this.transform.position);
             //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
             Relode();
         }
