@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760b902209d0dc24f96c8b4a59e84320, type: 3}
-  m_Name: Enemy_1
+  m_Name: Enemy_2
   m_EditorClassIdentifier: 
-  health: 30
+  health: 40
   damage: 2
-  speed: 3.5
-  stopingDistance: 3
+  speed: 3.1
+  stopingDistance: 5
   canMove: 1
-  attackDelay: 5
-  enemyModel: {fileID: 6598334990076505978, guid: 7f1604aceb44f6447923d6e160633be3,
+  attackDelay: 4
+  enemyModel: {fileID: 5931604073940936126, guid: 480561236c5390e419dd2af7af14552d,
     type: 3}
-  CanShoot: 0
-  magazine: 0
-  relodeTime: 0
-  maxShootingDistans: 0
+  CanShoot: 1
+  magazine: 6
+  relodeTime: 3
+  maxShootingDistans: 20
