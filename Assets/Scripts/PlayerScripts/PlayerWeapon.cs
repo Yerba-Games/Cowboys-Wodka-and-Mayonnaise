@@ -12,7 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine=6,relodeTime=2;
-    [ShowNonSerializedField]private float currentMagazine;
+    [ShowNonSerializedField]private int currentMagazine;
     private bool isReloding;
     private Camera mainCamera;
     Inputs inputs; //popi�cie do klasy z inputem

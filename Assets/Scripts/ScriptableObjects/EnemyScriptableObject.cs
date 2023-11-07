@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
+using NaughtyAttributes;
 
 [CreateAssetMenu(fileName ="EnemyScriptableObject",menuName ="EnemyStats")]
 public class EnemyScriptableObject : ScriptableObject
@@ -13,4 +14,7 @@ public class EnemyScriptableObject : ScriptableObject
     public bool canMove;
     public int attackDelay;
     public GameObject enemyModel;
+    public bool CanShoot;
+    [ShowIf("CanShoot")] public int magazine, relodeTime;
+    [ShowIf("CanShoot")] public float maxShootingDistans;
 }

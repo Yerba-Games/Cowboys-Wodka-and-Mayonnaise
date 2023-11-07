@@ -233,7 +233,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638349764196953421
+  lastModified: 638349770814311128
   FileSizes:
   - Name: Desktop
     Value: 1912
@@ -280,7 +280,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/InGame.bank
   Name: InGame
   StudioPath: bank:/InGame
-  lastModified: 638349764196867692
+  lastModified: 638349770814301121
   FileSizes:
   - Name: Desktop
     Value: 195744
@@ -456,7 +456,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638349764196928084
+  lastModified: 638349770814301121
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -503,7 +503,7 @@ MonoBehaviour:
   - {fileID: -540797334313713473}
   StringsBanks:
   - {fileID: -5596785852123706500}
-  cacheTime: 638349764197624526
+  cacheTime: 638349770814311128
   cacheVersion: 131608
 --- !u!114 &79307920633282106
 MonoBehaviour:
@@ -708,7 +708,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/MM.bank
   Name: MM
   StudioPath: bank:/MM
-  lastModified: 638349764197624526
+  lastModified: 638349770814301121
   FileSizes:
   - Name: Desktop
     Value: 3172
