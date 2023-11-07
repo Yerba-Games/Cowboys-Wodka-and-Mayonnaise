@@ -8,15 +8,23 @@ public class SpawnManager : MonoBehaviour
 
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] EnemysToSpawn[] enemysToSpawns;
+    [SerializeField] int spawnCount=3;
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
     }
-    public static void SpawnEnemies()
+    public static bool SpawnEnemies()
     {
-        instance.Spawn();
+        if (instance.spawnCount >= 0)
+        {
+            instance.spawnCount--;
+            instance.Spawn();
+            return true;
+        }
+        GM.ActivateBossFight();
+        return false;
     }
     private void Spawn()
     {

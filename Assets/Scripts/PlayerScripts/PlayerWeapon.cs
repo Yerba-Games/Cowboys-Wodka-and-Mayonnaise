@@ -11,8 +11,6 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
-    [SerializeField] BulletScriptableObject bulletSpeedStat;
-    float bulletSpeed;
     [SerializeField] int magazine=6,relodeTime=2;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
@@ -41,7 +39,6 @@ public class PlayerWeapon : MonoBehaviour
     {
         mainCamera = Camera.main;
         currentMagazine = magazine;
-        bulletSpeed = bulletSpeedStat.speed;
     }
 
     private void Update()
@@ -54,7 +51,7 @@ public class PlayerWeapon : MonoBehaviour
         if (!isReloding) 
         {
             Debug.Log("piu");
-            GameObject tempBullet = Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
+            Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
             //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
             Relode();
         }
@@ -64,7 +61,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Relode()
     {
         currentMagazine--;
-        if (currentMagazine< 0)
+        if (currentMagazine<= 0)
         {
             isReloding=true;
             StartCoroutine(Reloding());
