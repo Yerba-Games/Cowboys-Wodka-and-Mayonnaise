@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField]EnemyScriptableObject enemyScriptableObject;
-    int health;
+    [ProgressBar("Health", 100, EColor.Red)][ShowNonSerializedField] int health;
     float speed;
     bool canMove;
     GameObject model;
@@ -32,6 +33,7 @@ public class EnemyHealth : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            EnemiesManager.EnemyDies();
             Destroy(gameObject);
         }
     }
