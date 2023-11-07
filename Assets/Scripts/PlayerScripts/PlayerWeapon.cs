@@ -14,6 +14,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine=6,relodeTime=2;
     [SerializeField] private EventReference playerGunShootSound;
+    [SerializeField] private EventReference playerReloadSound;
     [ShowNonSerializedField]private float currentMagazine;
     private bool isReloding;
     private Camera mainCamera;
@@ -67,6 +68,7 @@ public class PlayerWeapon : MonoBehaviour
         if (currentMagazine<= 0)
         {
             isReloding=true;
+            AudioManager.instance.PlayOneShot(playerReloadSound, this.transform.position);
             StartCoroutine(Reloding());
         }
     }

@@ -541,7 +541,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36508
+  m_Name: pb_Mesh37156
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -706,7 +706,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36488
+  m_Name: pb_Mesh37136
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -9726,10 +9726,90 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerHitSound.Path
+      value: event:/IN_GAME/Player/Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerDeathSound.Path
+      value: event:/IN_GAME/Player/Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerHitSound.Guid.Data1
+      value: 1647576002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerHitSound.Guid.Data2
+      value: 1302812022
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerHitSound.Guid.Data3
+      value: 1272831877
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerHitSound.Guid.Data4
+      value: -1173512192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerDeathSound.Guid.Data1
+      value: 1425862409
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerDeathSound.Guid.Data2
+      value: 1087519611
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerDeathSound.Guid.Data3
+      value: 1148016520
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerDeathSound.Guid.Data4
+      value: -781948056
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: relodeTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerReloadSound.Path
+      value: event:/IN_GAME/Player/Reload
+      objectReference: {fileID: 0}
     - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: playerGunShootSound.Path
       value: event:/IN_GAME/Player/Shoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerReloadSound.Guid.Data1
+      value: 1597527263
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerReloadSound.Guid.Data2
+      value: 1215743759
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerReloadSound.Guid.Data3
+      value: -928990028
+      objectReference: {fileID: 0}
+    - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: playerReloadSound.Guid.Data4
+      value: -643218036
       objectReference: {fileID: 0}
     - target: {fileID: 8115148050660585537, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
@@ -10609,6 +10689,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 21cc17608c33f644298bde87b9b58e19, type: 2}
+  enemyMeeleSound:
+    Guid:
+      Data1: -1655837816
+      Data2: 1329802520
+      Data3: -1506066783
+      Data4: -1437921977
+    Path: event:/IN_GAME/Enemy/Melee
 --- !u!114 &2111752597
 MonoBehaviour:
   m_ObjectHideFlags: 0
