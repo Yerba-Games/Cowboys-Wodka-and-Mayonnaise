@@ -260,7 +260,11 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638349896740227751
+=======
+  lastModified: 638349847408743640
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 1954
@@ -307,7 +311,11 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/InGame.bank
   Name: InGame
   StudioPath: bank:/InGame
+<<<<<<< Updated upstream
   lastModified: 638349896740162573
+=======
+  lastModified: 638349847408733625
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 1646336
@@ -483,7 +491,11 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638349896740207833
+=======
+  lastModified: 638349847408738676
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -531,7 +543,11 @@ MonoBehaviour:
   - {fileID: -540797334313713473}
   StringsBanks:
   - {fileID: -5596785852123706500}
+<<<<<<< Updated upstream
   cacheTime: 638349896740460705
+=======
+  cacheTime: 638349847408743640
+>>>>>>> Stashed changes
   cacheVersion: 131608
 --- !u!114 &79307920633282106
 MonoBehaviour:
@@ -736,7 +752,11 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/MM.bank
   Name: MM
   StudioPath: bank:/MM
+<<<<<<< Updated upstream
   lastModified: 638349896740460705
+=======
+  lastModified: 638349847408733625
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 3172

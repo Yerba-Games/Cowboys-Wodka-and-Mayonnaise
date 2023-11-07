@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemiesManager : MonoBehaviour
 {
     public static EnemiesManager instance;
-    private int privateEnemiesAlive;
+    [SerializeField] private int privateEnemiesAlive;
     private void Awake()
     {
         if (instance == null)
