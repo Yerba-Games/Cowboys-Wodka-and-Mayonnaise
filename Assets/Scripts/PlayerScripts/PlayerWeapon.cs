@@ -15,7 +15,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] int magazine=6,relodeTime=2;
     [SerializeField] private EventReference playerGunShootSound;
     [SerializeField] private EventReference playerReloadSound;
-    [ShowNonSerializedField]private float currentMagazine;
+    [ShowNonSerializedField]private int currentMagazine;
     private bool isReloding;
     private Camera mainCamera;
     Inputs inputs; //popi�cie do klasy z inputem

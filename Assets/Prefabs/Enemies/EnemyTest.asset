@@ -17,4 +17,10 @@ MonoBehaviour:
   speed: 3.5
   stopingDistance: 3
   canMove: 1
-  attackDelay: 3
+  attackDelay: 2
+  enemyModel: {fileID: 2017166478082790791, guid: e6cd585366d0d6e47b6edf7d1a021116,
+    type: 3}
+  CanShoot: 1
+  magazine: 6
+  relodeTime: 2
+  maxShootingDistans: 10

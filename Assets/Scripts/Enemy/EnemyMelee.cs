@@ -29,12 +29,22 @@ public class EnemyMelee : MonoBehaviour
     {
         if (canAttack)
         {
-            Ray ray= new Ray(transform.position, playerPositon.position);
             RaycastHit hit;
-            if (Physics.Raycast(ray,out hit,maxDistans)) 
+            Ray ray= new Ray(transform.position, playerPositon.position);
+            Physics.Raycast(ray, out hit);
+
+            //if (Physics.Raycast(ray,out hit,maxDistans)) 
+            //{
+            //    Debug.Log("Attacking");
+            //    canAttack = false;
+            //    StartCoroutine(Attack(hit.collider.gameObject));
+            //}
+            if (transform.position.x - playerPositon.position.x <= maxDistans
+           || playerPositon.position.x - transform.position.x <= maxDistans
+           || playerPositon.position.z - transform.position.z <= maxDistans
+           || transform.position.z - playerPositon.position.z <= maxDistans)
             {
                 Debug.Log("Attacking");
-                canAttack = false;
                 StartCoroutine(Attack(hit.collider.gameObject));
             }
         }
@@ -49,6 +59,7 @@ public class EnemyMelee : MonoBehaviour
     //        StartCoroutine(Attack(collision.gameObject));
     //        canAttack=false;
     //    }
+    //}
 
 
     IEnumerator Attack(GameObject target)
