@@ -2,11 +2,14 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //¯ycie proste jest jak budowa T-55, bo jestem iñ¿ynierem trzymam zaciœniêt¹ piêœæ
+    //ï¿½ycie proste jest jak budowa T-55, bo jestem iï¿½ynierem trzymam zaciï¿½niï¿½tï¿½ piï¿½ï¿½
     [SerializeField][ProgressBar("Health", 100, EColor.Red)]int health=100;
+    [SerializeField] private EventReference playerDeathSound;
+    [SerializeField] private EventReference playerHitSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +24,12 @@ public class PlayerHealth : MonoBehaviour
     public void EnemyHit(int damage)
     {
         health -= damage;
+        AudioManager.instance.PlayOneShot(playerHitSound, this.transform.position); 
         if (health <= 0)
         {
+            AudioManager.instance.PlayOneShot(playerDeathSound, this.transform.position); 
             gameObject.SetActive(false);
         }
-        //I bang moge skurwysynów nokautowaæ rozpierdalam czo³gi lekko ja i moja za³oga
+        //I bang moge skurwysynï¿½w nokautowaï¿½ rozpierdalam czoï¿½gi lekko ja i moja zaï¿½oga
     }
 }

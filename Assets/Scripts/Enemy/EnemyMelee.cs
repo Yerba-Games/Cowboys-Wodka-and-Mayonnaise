@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class EnemyMelee : MonoBehaviour
 {
-    //JEBAÆ KURWA TEN SKRYPT  ¯YGAM JU¯ NIM ZA D£UGO NA NIEGO ZESZ£O PIERDOLE TO WYCHODZE DZIA£A TO TU NIE WRACAM   
+    //JEBAï¿½ KURWA TEN SKRYPT  ï¿½YGAM JUï¿½ NIM ZA Dï¿½UGO NA NIEGO ZESZï¿½O PIERDOLE TO WYCHODZE DZIAï¿½A TO TU NIE WRACAM   
     private bool canAttack=true;
     [SerializeField]EnemyScriptableObject enemyStats;
+    [SerializeField] private EventReference enemyMeeleSound;
     private int attackDelay;
     private int damage;
     private Transform playerPositon;
@@ -64,6 +66,7 @@ public class EnemyMelee : MonoBehaviour
     {
         Debug.Log("atacking faze 2");
         target.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
+        AudioManager.instance.PlayOneShot(enemyMeeleSound, this.transform.position);
         yield return new WaitForSeconds(attackDelay);
         Debug.Log($@"cooldown stoped at {Time.time}");
         canAttack = true;
