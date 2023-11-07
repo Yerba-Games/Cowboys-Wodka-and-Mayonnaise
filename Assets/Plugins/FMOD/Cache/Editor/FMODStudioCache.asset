@@ -54,6 +54,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8257131414991169531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/IN_GAME/Music/oppenhaimer
+  m_EditorClassIdentifier: 
+  Path: event:/IN_GAME/Music/oppenhaimer
+  Guid:
+    Data1: -934846134
+    Data2: 1329666336
+    Data3: -1325505347
+    Data4: 226660795
+  Banks:
+  - {fileID: -4460252627443823139}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7713228775839471402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +260,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638349764196953421
+  lastModified: 638349896740227751
   FileSizes:
   - Name: Desktop
-    Value: 1912
+    Value: 1954
   Exists: 1
 --- !u!114 &-5470349466223816461
 MonoBehaviour:
@@ -280,10 +307,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/InGame.bank
   Name: InGame
   StudioPath: bank:/InGame
-  lastModified: 638349764196867692
+  lastModified: 638349896740162573
   FileSizes:
   - Name: Desktop
-    Value: 195744
+    Value: 1646336
   Exists: 1
 --- !u!114 &-4194997215669763139
 MonoBehaviour:
@@ -456,7 +483,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638349764196928084
+  lastModified: 638349896740207833
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -498,12 +525,13 @@ MonoBehaviour:
   - {fileID: 119491505618322345}
   - {fileID: -8944050351503912674}
   - {fileID: -8678093328838323906}
+  - {fileID: -8257131414991169531}
   EditorParameters: []
   MasterBanks:
   - {fileID: -540797334313713473}
   StringsBanks:
   - {fileID: -5596785852123706500}
-  cacheTime: 638349764197624526
+  cacheTime: 638349896740460705
   cacheVersion: 131608
 --- !u!114 &79307920633282106
 MonoBehaviour:
@@ -708,7 +736,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/MM.bank
   Name: MM
   StudioPath: bank:/MM
-  lastModified: 638349764197624526
+  lastModified: 638349896740460705
   FileSizes:
   - Name: Desktop
     Value: 3172

@@ -9733,6 +9733,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
+      propertyPath: oppenhaimerSound.Path
+      value: event:/IN_GAME/Music/oppenhaimer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
       propertyPath: playerDeathSound.Path
       value: event:/IN_GAME/Player/Death
       objectReference: {fileID: 0}
@@ -9755,6 +9760,26 @@ PrefabInstance:
         type: 3}
       propertyPath: playerHitSound.Guid.Data4
       value: -1173512192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: oppenhaimerSound.Guid.Data1
+      value: -934846134
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: oppenhaimerSound.Guid.Data2
+      value: 1329666336
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: oppenhaimerSound.Guid.Data3
+      value: -1325505347
+      objectReference: {fileID: 0}
+    - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: oppenhaimerSound.Guid.Data4
+      value: 226660795
       objectReference: {fileID: 0}
     - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
