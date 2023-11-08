@@ -7,7 +7,7 @@ using FMODUnity;
 public class PlayerHealth : MonoBehaviour
 {
     //�ycie proste jest jak budowa T-55, bo jestem i�ynierem trzymam zaci�ni�t� pi��
-    [SerializeField][ProgressBar("Health", 100, EColor.Red)]int health=100;
+    [SerializeField][ProgressBar("Health", 100, EColor.Red)]int health=1000;
     [SerializeField] private EventReference playerDeathSound;
     [SerializeField] private EventReference playerHitSound;
     [SerializeField] private EventReference oppenhaimerSound;

@@ -12,14 +12,19 @@ public class StartTrigerScript : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter(Collider other)
     {
-       foreach (GameObject go in Door)
+        if (other.CompareTag("Player"))
         {
-            go.transform.DORotate(new Vector3(0,0,0),1);
-        }
-       foreach (GameObject go in StartEnemies)
-        {
-            go.GetComponent<NavMeshAgent>().enabled = true;
-            go.GetComponent<EnemyNavigationScript>().enabled = true;
+            foreach (GameObject go in Door)
+            {
+                go.transform.DORotate(new Vector3(0, 0, 0), 1);
+            }
+            foreach (GameObject go in StartEnemies)
+            {
+                go.GetComponent<NavMeshAgent>().enabled = true;
+                go.GetComponent<EnemyNavigationScript>().enabled = true;
+                go.GetComponent<EnemyMelee>().enabled = true;
+            }
+            gameObject.SetActive(false);
         }
     }
 }
