@@ -65,6 +65,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Relode()
     {
         currentMagazine--;
+        UI.RemoveAmmo();
         if (currentMagazine<= 0)
         {
             isReloding=true;
@@ -76,6 +77,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         yield return new WaitForSeconds(relodeTime);
         currentMagazine = magazine;
+        UI.RemoveAmmo(false);
         isReloding = false;
     }
     #endregion

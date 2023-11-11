@@ -10,13 +10,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField][ProgressBar("Health", 100, EColor.Red)]int health=1000;
     [SerializeField] private EventReference playerDeathSound;
     [SerializeField] private EventReference playerHitSound;
-    [SerializeField] private EventReference oppenhaimerSound;
-    // Start is called before the first frame update
-    void Start()
-    {
-        AudioManager.instance.PlayOneShot(oppenhaimerSound, this.transform.position);
-    }
-
     // Update is called once per frame
     void Update()
     {
