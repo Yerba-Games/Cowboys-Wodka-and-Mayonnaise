@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine=6,relodeTime=2;
+    [SerializeField] float relodeReduction = 0.5f;
     [SerializeField] private EventReference playerGunShootSound;
     [SerializeField] private EventReference playerReloadSound;
     [ShowNonSerializedField]private int currentMagazine;
@@ -30,12 +31,14 @@ public class PlayerWeapon : MonoBehaviour
         inputs.Player.Enable();
         mousePositon = inputs.Player.GunRotation;
         inputs.Player.Fire.started += Shoot;
+        inputs.Player.Relode.started += PlayerRelode;
 
     }
     private void OnDisable()
     {
         inputs.Player.Disable();
         inputs.Player.Fire.started -= Shoot;
+        inputs.Player.Relode.started -= PlayerRelode;
     }
     #endregion
     private void Start()
@@ -73,9 +76,17 @@ public class PlayerWeapon : MonoBehaviour
             StartCoroutine(Reloding());
         }
     }
-    IEnumerator Reloding()
+    private void PlayerRelode(InputAction.CallbackContext obj)
     {
-        yield return new WaitForSeconds(relodeTime);
+        isReloding = true;
+        AudioManager.instance.PlayOneShot(playerReloadSound, this.transform.position);
+        float bulletReductuction = relodeReduction * currentMagazine;
+        StartCoroutine(Reloding(bulletReductuction));
+    }
+    IEnumerator Reloding(float relodeTimeReduction=0)
+    {
+        Debug.Log($@"ReloadingTime:{relodeTime - relodeTimeReduction}");
+        yield return new WaitForSeconds(relodeTime-relodeTimeReduction);
         currentMagazine = magazine;
         UI.RemoveAmmo(false);
         isReloding = false;

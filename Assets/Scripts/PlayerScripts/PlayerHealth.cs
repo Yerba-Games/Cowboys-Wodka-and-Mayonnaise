@@ -11,13 +11,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private EventReference playerDeathSound;
     [SerializeField] private EventReference playerHitSound;
     // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        UI.SetMaxHP(health);
     }
     public void EnemyHit(int damage)
     {
         health -= damage;
+        UI.SetHealth(health);
         AudioManager.instance.PlayOneShot(playerHitSound, this.transform.position); 
         if (health <= 0)
         {

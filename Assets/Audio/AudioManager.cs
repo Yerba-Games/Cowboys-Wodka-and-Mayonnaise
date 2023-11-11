@@ -21,6 +21,6 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(EventReference sound, Vector2 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
-        Debug.Log("Kostek ty kurwo jebana<3");
+        
     }
 }

@@ -71,6 +71,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Relode"",
+                    ""type"": ""Button"",
+                    ""id"": ""219b1e50-05af-49b8-98c8-83581576b1e2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -335,6 +344,28 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Melee"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""46aac520-125c-42c8-b4ee-90a22c5bdeef"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Relode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""624b0e50-1de8-448f-a16d-84a02b26fa41"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Relode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -927,6 +958,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_GunRotation = m_Player.FindAction("GunRotation", throwIfNotFound: true);
         m_Player_Melee = m_Player.FindAction("Melee", throwIfNotFound: true);
+        m_Player_Relode = m_Player.FindAction("Relode", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1005,6 +1037,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_GunRotation;
     private readonly InputAction m_Player_Melee;
+    private readonly InputAction m_Player_Relode;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1014,6 +1047,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @GunRotation => m_Wrapper.m_Player_GunRotation;
         public InputAction @Melee => m_Wrapper.m_Player_Melee;
+        public InputAction @Relode => m_Wrapper.m_Player_Relode;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1038,6 +1072,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Melee.started += instance.OnMelee;
             @Melee.performed += instance.OnMelee;
             @Melee.canceled += instance.OnMelee;
+            @Relode.started += instance.OnRelode;
+            @Relode.performed += instance.OnRelode;
+            @Relode.canceled += instance.OnRelode;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1057,6 +1094,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Melee.started -= instance.OnMelee;
             @Melee.performed -= instance.OnMelee;
             @Melee.canceled -= instance.OnMelee;
+            @Relode.started -= instance.OnRelode;
+            @Relode.performed -= instance.OnRelode;
+            @Relode.canceled -= instance.OnRelode;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1244,6 +1284,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnGunRotation(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
+        void OnRelode(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

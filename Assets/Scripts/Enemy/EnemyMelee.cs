@@ -42,6 +42,7 @@ public class EnemyMelee : MonoBehaviour
             if (Vector3.Distance(transform.position,playerPositon.position)<=maxDistans)
             {
                 Debug.Log("Attacking");
+                canAttack = false;
                 StartCoroutine(Attack(playerPositon.gameObject));
             }
         }
