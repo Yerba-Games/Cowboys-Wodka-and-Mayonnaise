@@ -12,8 +12,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
-    [SerializeField] int magazine=6,relodeTime=2;
-    [SerializeField] float relodeReduction = 0.5f;
+    [SerializeField] int magazine = 6;
+    [SerializeField]float relodeTime=1;
     [SerializeField] private EventReference playerGunShootSound;
     [SerializeField] private EventReference playerReloadSound;
     [ShowNonSerializedField]private int currentMagazine;
@@ -30,15 +30,15 @@ public class PlayerWeapon : MonoBehaviour
     {
         inputs.Player.Enable();
         mousePositon = inputs.Player.GunRotation;
-        inputs.Player.Fire.started += Shoot;
-        inputs.Player.Relode.started += PlayerRelode;
+        inputs.Player.Fire.performed+= CheckShoot;
+        inputs.Player.Relode.performed += PlayerRelode;
 
     }
     private void OnDisable()
     {
         inputs.Player.Disable();
-        inputs.Player.Fire.started -= Shoot;
-        inputs.Player.Relode.started -= PlayerRelode;
+        inputs.Player.Fire.performed -= CheckShoot;
+        inputs.Player.Relode.performed -= PlayerRelode;
     }
     #endregion
     private void Start()
@@ -52,44 +52,53 @@ public class PlayerWeapon : MonoBehaviour
         Aim();
     }
     #region shooting and reloding
-    void Shoot(InputAction.CallbackContext obj)
+    void CheckShoot(InputAction.CallbackContext obj)
     {
-        if (!isReloding) 
+        if (isReloding && currentMagazine > 0)
         {
-            Debug.Log("piu");
-            Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
-            AudioManager.instance.PlayOneShot(playerGunShootSound, this.transform.position);
-            //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
-            Relode();
+            StopCoroutine(Reloding());
+            Shoot();
+            return;
         }
-
-        
+        Shoot();
+    }
+    void Shoot()
+    {
+        currentMagazine--;
+        UI.AmmoChange(-1);
+        Debug.Log("piu");
+        Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
+        AudioManager.instance.PlayOneShot(playerGunShootSound, this.transform.position);
+        //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
+        Relode();
     }
     private void Relode()
     {
-        currentMagazine--;
-        UI.RemoveAmmo();
         if (currentMagazine<= 0)
         {
-            isReloding=true;
-            AudioManager.instance.PlayOneShot(playerReloadSound, this.transform.position);
             StartCoroutine(Reloding());
         }
     }
     private void PlayerRelode(InputAction.CallbackContext obj)
     {
-        isReloding = true;
-        AudioManager.instance.PlayOneShot(playerReloadSound, this.transform.position);
-        float bulletReductuction = relodeReduction * currentMagazine;
-        StartCoroutine(Reloding(bulletReductuction));
+        if (currentMagazine < magazine)
+        {
+            StartCoroutine(Reloding());
+        }
     }
-    IEnumerator Reloding(float relodeTimeReduction=0)
+    IEnumerator Reloding()
     {
-        Debug.Log($@"ReloadingTime:{relodeTime - relodeTimeReduction}");
-        yield return new WaitForSeconds(relodeTime-relodeTimeReduction);
-        currentMagazine = magazine;
-        UI.RemoveAmmo(false);
-        isReloding = false;
+        //dzwięk i animacja startu przeładowania
+        for(int i = currentMagazine;i<magazine;i++)
+        {
+            isReloding = true;
+            currentMagazine++;
+            UI.AmmoChange(1);
+            //tu dzwięk przeładowania pojedyńczeko bulleta
+            //animacja pojedyńczego bulleta
+            yield return new WaitForSeconds(relodeTime);
+            isReloding = false;
+        }
     }
     #endregion
     #region aiming

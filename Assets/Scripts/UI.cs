@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class UI : MonoBehaviour
 {
@@ -22,24 +23,19 @@ public class UI : MonoBehaviour
     /// if there is no argumenst it removes ammo from ui else if false, it adds all ammo to ui
     /// </summary>
     /// <param name="RemoveAmmo"></param>
-    public static void RemoveAmmo(bool RemoveAmmo=true)
+    public static void AmmoChange(int ammo)
     {
-        if (RemoveAmmo) { ui.AmmoRemoveBullets(); return; }
-        ui.AmmoRelode();
+        ui.AmmoChangeUI(ammo);
     }
-    void AmmoRemoveBullets()
+    void AmmoChangeUI(int ammoChange)
     {
-        ammo--;
+        ammo+=ammoChange;
         ammoText.text=ammo.ToString();
-        bullets[ammo].SetActive(false);
+        bool changeUI = ammoChange>0 ? true:false;
+        int changeUIIndex = ammoChange > 0 ? ammo - 1 : ammo;
+        bullets[changeUIIndex].SetActive(changeUI);
     }
-    void AmmoRelode()
-    {
-        ammo=bullets.Length;
-        ammoText.text = ammo.ToString();
-        for (int i = 0; i < ammo; i++) { bullets[i].SetActive(true); }
 
-    }
     #endregion
     #region HealthUI
     void SetHP(int curentHP)
