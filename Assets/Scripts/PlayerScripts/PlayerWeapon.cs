@@ -13,18 +13,20 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine = 6;
-    [SerializeField]float relodeTime=1;
+    [SerializeField]float relodeTime=1,relodSpeedUp=0.25f;
     [SerializeField] private EventReference playerGunShootSound;
     [SerializeField] private EventReference playerReloadSound;
     [ShowNonSerializedField]private int currentMagazine;
-    private bool isReloding;
+    Coroutine RelodeCorutine;
     private Camera mainCamera;
+    float currentTime=0;
     Inputs inputs; //popi�cie do klasy z inputem
     private InputAction mousePositon;
     #region Input ini
     private void Awake()
     {
         inputs = new Inputs();
+        relodSpeedUp *= relodeTime;
     }
     private void OnEnable()
     {
@@ -54,16 +56,19 @@ public class PlayerWeapon : MonoBehaviour
     #region shooting and reloding
     void CheckShoot(InputAction.CallbackContext obj)
     {
-        if (isReloding && currentMagazine > 0)
+        if (RelodeCorutine!=null && currentMagazine > 0)
         {
-            StopAllCoroutines();
-            Shoot();
-            return;
+            CorutineStop(ref RelodeCorutine);
         }
         Shoot();
     }
     void Shoot()
     {
+        if(currentMagazine <= 0)
+        {
+            return;
+        }
+
         currentMagazine--;
         UI.AmmoChange(-1);
         Debug.Log("piu");
@@ -76,30 +81,57 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (currentMagazine<= 0)
         {
-            StopAllCoroutines();
-            StartCoroutine(Reloding());
+            //CorutineStop(ref RelodeCorutine);
+            CorutinStart(ref RelodeCorutine);
         }
+    }
+    bool CorutinStart(ref Coroutine coroutine/*,IEnumerator enumerato*/)
+    {
+        if (coroutine == null) 
+        {
+            coroutine = StartCoroutine(Reloding());
+            return true; 
+        }
+
+        return false;
+    }
+    bool CorutineStop(ref Coroutine coroutine)
+    {
+        if (coroutine != null)
+        {
+            currentTime = 0;
+            StopCoroutine(coroutine);
+            coroutine = null;
+            return true;
+        }
+        return false;
     }
     private void PlayerRelode(InputAction.CallbackContext obj)
     {
         if (currentMagazine < magazine)
         {
-            StopAllCoroutines();
-            StartCoroutine(Reloding());
+            currentTime += relodSpeedUp;
+            //CorutineStop(ref RelodeCorutine);
+            CorutinStart(ref RelodeCorutine);
         }
     }
     IEnumerator Reloding()
     {
         //dzwięk i animacja startu przeładowania
         for(int i = currentMagazine;i<magazine;i++)
-        {
-            isReloding = true;
+        { 
+            while (currentTime <= relodeTime)
+            {
+                currentTime += Time.deltaTime;
+                yield return null;
+            }
+            currentTime = 0;
             currentMagazine++;
+            Debug.Log(currentMagazine);
             UI.AmmoChange(1);
             //tu dzwięk przeładowania pojedyńczeko bulleta
             //animacja pojedyńczego bulleta
-            yield return new WaitForSeconds(relodeTime);
-            isReloding = false;
+            RelodeCorutine = null;
         }
     }
     #endregion
