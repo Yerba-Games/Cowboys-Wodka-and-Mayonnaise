@@ -1,10 +1,12 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GM : MonoBehaviour
 {
-    [SerializeField] GameObject bossDoor;
+    //[SerializeField] GameObject bossDoor;
+    [SerializeField] GameObject[] Door;
     #region Singleton
     private static GM _instance;
     public static GM Instance => _instance;
@@ -26,6 +28,10 @@ public class GM : MonoBehaviour
     }
     void BossFight()
     {
-        bossDoor.SetActive(true);
+        foreach (GameObject go in Door)
+        {
+            go.transform.DORotate(new Vector3(0, 120, 0), 1);
+        }
+        //bossDoor.SetActive(true);
     }
 }
