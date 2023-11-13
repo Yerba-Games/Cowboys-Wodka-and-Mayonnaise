@@ -56,7 +56,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (isReloding && currentMagazine > 0)
         {
-            StopCoroutine(Reloding());
+            StopAllCoroutines();
             Shoot();
             return;
         }
@@ -76,6 +76,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (currentMagazine<= 0)
         {
+            StopAllCoroutines();
             StartCoroutine(Reloding());
         }
     }
@@ -83,6 +84,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (currentMagazine < magazine)
         {
+            StopAllCoroutines();
             StartCoroutine(Reloding());
         }
     }
