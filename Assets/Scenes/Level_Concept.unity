@@ -814,7 +814,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-120026
+  m_Name: pb_Mesh45100
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1183,7 +1183,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36906
+  m_Name: pb_Mesh45314
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1413,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
+  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8688,6 +8688,73 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 112848727}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &578794119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 578794122}
+  - component: {fileID: 578794121}
+  - component: {fileID: 578794120}
+  m_Layer: 0
+  m_Name: Level End
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &578794120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578794119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e990339992d1d4ca496ad43251e47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: EndLevel
+--- !u!65 &578794121
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578794119}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &578794122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578794119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 37.04, y: 1.0297601, z: 0.5748091}
+  m_LocalScale: {x: 4, y: 1, z: 4}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &586405700
 GameObject:
   m_ObjectHideFlags: 0
@@ -9014,7 +9081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
+  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10151,7 +10218,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-120028
+  m_Name: pb_Mesh45022
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -13580,6 +13647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e990339992d1d4ca496ad43251e47b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: 
 --- !u!1001 &1447341853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13660,7 +13728,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37110
+  m_Name: pb_Mesh45554
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -16893,13 +16961,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 21cc17608c33f644298bde87b9b58e19, type: 2}
-  enemyMeeleSound:
-    Guid:
-      Data1: -1655837816
-      Data2: 1329802520
-      Data3: -1506066783
-      Data4: -1437921977
-    Path: event:/IN_GAME/Enemy/Melee
 --- !u!114 &2111752597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17689,3 +17750,4 @@ SceneRoots:
   - {fileID: 1908672829}
   - {fileID: 2143037960}
   - {fileID: 1717853216}
+  - {fileID: 578794122}
