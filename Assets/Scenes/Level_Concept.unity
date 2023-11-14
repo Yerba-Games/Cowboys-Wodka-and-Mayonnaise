@@ -505,7 +505,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh36998
+  m_Name: pb_Mesh38290
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1413,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
+  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9014,7 +9014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
+  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16164,6 +16164,83 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2303158c6af8d4d83827f07ea7b532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyHitSound:
+    Guid:
+      Data1: 1720373688
+      Data2: 1130871429
+      Data3: 647822754
+      Data4: 382513750
+    Path: event:/IN_GAME/Enemy/Damage
+  EnemyDeathSound:
+    Guid:
+      Data1: -1133016719
+      Data2: 1308115064
+      Data3: 1545106623
+      Data4: -1370229920
+    Path: event:/IN_GAME/Enemy/Death
+  EnemyMeleeSound:
+    Guid:
+      Data1: -1655837816
+      Data2: 1329802520
+      Data3: -1506066783
+      Data4: -1437921977
+    Path: event:/IN_GAME/Enemy/Melee
+  EnemyShotSound:
+    Guid:
+      Data1: 1671334473
+      Data2: 1083675959
+      Data3: 1346741428
+      Data4: -471182157
+    Path: event:/IN_GAME/Enemy/Shoot
+  PlayerHitSound:
+    Guid:
+      Data1: 1647576002
+      Data2: 1302812022
+      Data3: 1272831877
+      Data4: -1173512192
+    Path: event:/IN_GAME/Player/Damage
+  PlayerDeathSound:
+    Guid:
+      Data1: 1425862409
+      Data2: 1087519611
+      Data3: 1148016520
+      Data4: -781948056
+    Path: event:/IN_GAME/Player/Death
+  PlayerLowSound:
+    Guid:
+      Data1: 774502434
+      Data2: 1163510368
+      Data3: 1644856509
+      Data4: -725787167
+    Path: event:/IN_GAME/Player/Low Health
+  PlayerShotSound:
+    Guid:
+      Data1: 461197567
+      Data2: 1079461405
+      Data3: 705009323
+      Data4: -766422574
+    Path: event:/IN_GAME/Player/Shoot
+  PlayerReloadSound:
+    Guid:
+      Data1: 1597527263
+      Data2: 1215743759
+      Data3: -928990028
+      Data4: -643218036
+    Path: event:/IN_GAME/Player/Reload
+  WorldAmbient:
+    Guid:
+      Data1: 1567030790
+      Data2: 1105350803
+      Data3: 1238029960
+      Data4: -435736169
+    Path: event:/IN_GAME/World/Ambient
+  WorldWoodDoor:
+    Guid:
+      Data1: -1694218091
+      Data2: 1178656271
+      Data3: 342995636
+      Data4: 382807651
+    Path: event:/IN_GAME/World/IE/Door
 --- !u!4 &1932695012
 Transform:
   m_ObjectHideFlags: 0
@@ -17604,8 +17681,8 @@ SceneRoots:
   - {fileID: 1760713140}
   - {fileID: 1932695012}
   - {fileID: 1583173645}
-  - {fileID: 890992688}
   - {fileID: 1795641158}
+  - {fileID: 890992688}
   - {fileID: 2033570014}
   - {fileID: 1565155872104951355}
   - {fileID: 600921666}

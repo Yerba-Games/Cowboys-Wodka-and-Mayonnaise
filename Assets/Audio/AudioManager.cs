@@ -6,8 +6,19 @@ using FMODUnity;
 public class AudioManager : MonoBehaviour
 {
 
-    public static AudioManager instance { get; private set; }
+    [SerializeField] public EventReference EnemyHitSound;
+    [SerializeField] public EventReference EnemyDeathSound;
+    [SerializeField] public EventReference EnemyMeleeSound;
+    [SerializeField] public EventReference EnemyShotSound;
+    [SerializeField] public EventReference PlayerHitSound;
+    [SerializeField] public EventReference PlayerDeathSound;
+    [SerializeField] public EventReference PlayerLowSound;
+    [SerializeField] public EventReference PlayerShotSound;
+    [SerializeField] public EventReference PlayerReloadSound;
+    [SerializeField] public EventReference WorldAmbient;
+    [SerializeField] public EventReference WorldWoodDoor;
 
+    public static AudioManager instance { get; private set; }
 
     private void Awake()
     {
