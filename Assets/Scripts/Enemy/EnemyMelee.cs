@@ -8,7 +8,6 @@ public class EnemyMelee : MonoBehaviour
     //JEBA� KURWA TEN SKRYPT  �YGAM JU� NIM ZA D�UGO NA NIEGO ZESZ�O PIERDOLE TO WYCHODZE DZIA�A TO TU NIE WRACAM   
     private bool canAttack=true;
     [SerializeField]EnemyScriptableObject enemyStats;
-    [SerializeField] private EventReference enemyMeeleSound;
     private int attackDelay;
     private int damage;
     private Transform playerPositon;
@@ -64,7 +63,7 @@ public class EnemyMelee : MonoBehaviour
     {
         Debug.Log("atacking faze 2");
         target.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
-        AudioManager.instance.PlayOneShot(enemyMeeleSound, this.transform.position);
+        AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyMeleeSound, this.transform.position);
         yield return new WaitForSeconds(attackDelay);
         Debug.Log($@"cooldown stoped at {Time.time}");
         canAttack = true;

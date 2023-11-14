@@ -31,8 +31,10 @@ public class EnemyHealth : MonoBehaviour
     public void Hit(int damage)
     {
         health -= damage;
+        AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyHitSound, this.transform.position);
         if (health <= 0)
         {
+            AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyDeathSound, this.transform.position);
             EnemiesManager.EnemyDies();
             Destroy(gameObject);
         }
