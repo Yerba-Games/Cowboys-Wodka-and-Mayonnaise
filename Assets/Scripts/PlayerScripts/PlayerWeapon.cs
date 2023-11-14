@@ -15,6 +15,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine = 6;
     [SerializeField]float relodeTime=1,relodSpeedUp=0.25f;
+    [SerializeField] Animator animator;
     [ShowNonSerializedField]private int currentMagazine;
     Coroutine RelodeCorutine;
     private Camera mainCamera;
@@ -67,7 +68,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             return;
         }
-
+        animator.SetTrigger("shoot");
         currentMagazine--;
         UI.AmmoChange(-1);
         Debug.Log("piu");
@@ -118,7 +119,8 @@ public class PlayerWeapon : MonoBehaviour
     {
         //dzwięk i animacja startu przeładowania
         for(int i = currentMagazine;i<magazine;i++)
-        { 
+        {
+            animator.SetTrigger("Relode");
             while (currentTime <= relodeTime)
             {
                 currentTime += Time.deltaTime;

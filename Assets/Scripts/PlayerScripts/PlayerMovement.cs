@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Inputs inputs; //popiêcie do klasy z inputem
     [SerializeField][Foldout("Settings")] float Speed;
+    [SerializeField] Animator animator;
     private Rigidbody rb;
     private InputAction move; //odbiera input z akcji move
     // Start is called before the first frame update
@@ -43,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
         //movement
         Vector3 moveForce = new Vector3(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         rb.velocity = moveForce * Speed;
+        if (moveForce != new Vector3(0, 0, 0))
+        {
+            animator.SetBool("walk",true);
+            return;
+        }
+        animator.SetBool("walk", false);
     }
     //SEX NIE ISTNIEJE
 }
