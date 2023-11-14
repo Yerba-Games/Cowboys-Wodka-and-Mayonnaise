@@ -10162,6 +10162,7 @@ GameObject:
   - component: {fileID: 693845621}
   - component: {fileID: 693845620}
   - component: {fileID: 693845619}
+  - component: {fileID: 693845622}
   m_Layer: 0
   m_Name: Terrain_(-209.70, 0.00, -41.90)
   m_TagString: Untagged
@@ -10244,6 +10245,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2143037960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &693845622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 693845618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &695784275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13173,6 +13193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: czowiek_z_ubraniem_bez_srodek
+      objectReference: {fileID: 0}
+    - target: {fileID: 2017166478082790791, guid: e6cd585366d0d6e47b6edf7d1a021116,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18434,6 +18459,7 @@ GameObject:
   - component: {fileID: 2060776224}
   - component: {fileID: 2060776223}
   - component: {fileID: 2060776222}
+  - component: {fileID: 2060776225}
   m_Layer: 0
   m_Name: Terrain_(70.30, 0.00, -41.90)
   m_TagString: Untagged
@@ -18516,6 +18542,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2143037960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2060776225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060776221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2082347322
 GameObject:
   m_ObjectHideFlags: 0
