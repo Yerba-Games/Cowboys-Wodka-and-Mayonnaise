@@ -60,6 +60,7 @@ public class EnemyGun : MonoBehaviour
         if (!isReloding)
         {
             Debug.Log("piu");
+            AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyShotSound, this.transform.position);
             Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
             //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
             Relode();

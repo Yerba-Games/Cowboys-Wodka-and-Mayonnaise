@@ -14,8 +14,6 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] GameObject bullet,gunEnd;
     [SerializeField] int magazine = 6;
     [SerializeField]float relodeTime=1,relodSpeedUp=0.25f;
-    [SerializeField] private EventReference playerGunShootSound;
-    [SerializeField] private EventReference playerReloadSound;
     [ShowNonSerializedField]private int currentMagazine;
     Coroutine RelodeCorutine;
     private Camera mainCamera;
@@ -73,7 +71,7 @@ public class PlayerWeapon : MonoBehaviour
         UI.AmmoChange(-1);
         Debug.Log("piu");
         Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
-        AudioManager.instance.PlayOneShot(playerGunShootSound, this.transform.position);
+        AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerShotSound, this.transform.position);
         //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
         Relode();
     }

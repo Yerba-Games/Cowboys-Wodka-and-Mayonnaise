@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance { get; private set; }
 
-    private void Awake()
+    public void Awake()
     {
         if (instance != null)
         {
@@ -33,5 +33,13 @@ public class AudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
         
+    }
+    
+    public void PlayLoop(EventReference sound, Vector2 worldPos)
+    {
+        FMOD.Studio.EventInstance instance = RuntimeManager.CreateInstance(sound);
+        instance.set3DAttributes(RuntimeUtils.To3DAttributes(worldPos));
+        instance.start();
+        instance.release(); // Release the instance immediately to avoid leaks
     }
 }

@@ -13,13 +13,20 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         UI.SetMaxHP(health);
+        AudioManager.instance.PlayLoop(AudioManager.instance.WorldAmbient, new Vector2(0, 0));
+
     }
     public void EnemyHit(int damage)
     {
         health -= damage;
         UI.SetHealth(health);
+        //if (health <=25)
+        //{
+        //    AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerLowSound, this.transform.position);
+        //}
         if (health <= 0)
         {
+            AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerDeathSound, this.transform.position);
             gameObject.SetActive(false);
         }
         //I bang moge skurwysyn�w nokautowa� rozpierdalam czo�gi lekko ja i moja za�oga
