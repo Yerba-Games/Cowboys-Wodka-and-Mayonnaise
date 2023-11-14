@@ -9,6 +9,7 @@ using FMODUnity;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [SerializeField] private LineRenderer aimGuide;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
@@ -146,6 +147,8 @@ public class PlayerWeapon : MonoBehaviour
             // Ignore the height difference.
             if (!aimToY) {direction.y = 0; }
             transform.forward = direction;
+            aimGuide.SetPosition(0,transform.position);
+            aimGuide.SetPosition(1, GetMousePosition().position);
         }
     }
 
