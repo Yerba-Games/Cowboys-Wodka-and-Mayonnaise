@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     //�ycie proste jest jak budowa T-55, bo jestem i�ynierem trzymam zaci�ni�t� pi��
     [SerializeField][ProgressBar("Health", 100, EColor.Red)]int health=1000;
     [SerializeField] Animator animator;
+    bool lowHealthNotPlyed = true;
 
     // Update is called once per frame
     private void Start()
@@ -22,10 +23,11 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         UI.SetHealth(health);
         animator.SetTrigger("Hit");
-        //if (health <=25)
-        //{
-        //    AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerLowSound, this.transform.position);
-        //}
+        if (health <= 25&&lowHealthNotPlyed!=true)
+        {
+            lowHealthNotPlyed=false;
+            AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerLowSound, this.transform.position);
+        }
         if (health <= 0)
         {
             AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerDeathSound, this.transform.position);
