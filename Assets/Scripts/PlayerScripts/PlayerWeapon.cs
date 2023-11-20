@@ -118,7 +118,7 @@ public class PlayerWeapon : MonoBehaviour
     IEnumerator Reloding()
     {
         //dzwięk i animacja startu przeładowania
-        for(int i = currentMagazine;i<magazine;i++)
+        for (int i = currentMagazine; i < magazine; i++)
         {
             animator.SetTrigger("Relode");
             while (currentTime <= relodeTime)
@@ -132,8 +132,9 @@ public class PlayerWeapon : MonoBehaviour
             UI.AmmoChange(1);
             //tu dzwięk przeładowania pojedyńczeko bulleta
             //animacja pojedyńczego bulleta
-            RelodeCorutine = null;
+            
         }
+        RelodeCorutine = null;
     }
     #endregion
     #region aiming
