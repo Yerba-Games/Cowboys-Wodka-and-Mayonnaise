@@ -80,6 +80,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""b3a9f9c9-dca4-48d2-b079-cb92d3bb5f0e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -366,6 +375,28 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Relode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b884847e-65bf-4f19-9d20-3a98bb46e19f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbe82c5a-f059-475b-b904-dcbbce92f390"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -990,6 +1021,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_Player_GunRotation = m_Player.FindAction("GunRotation", throwIfNotFound: true);
         m_Player_Melee = m_Player.FindAction("Melee", throwIfNotFound: true);
         m_Player_Relode = m_Player.FindAction("Relode", throwIfNotFound: true);
+        m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1070,6 +1102,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_GunRotation;
     private readonly InputAction m_Player_Melee;
     private readonly InputAction m_Player_Relode;
+    private readonly InputAction m_Player_PickUp;
     public struct PlayerActions
     {
         private @Inputs m_Wrapper;
@@ -1080,6 +1113,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         public InputAction @GunRotation => m_Wrapper.m_Player_GunRotation;
         public InputAction @Melee => m_Wrapper.m_Player_Melee;
         public InputAction @Relode => m_Wrapper.m_Player_Relode;
+        public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1107,6 +1141,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Relode.started += instance.OnRelode;
             @Relode.performed += instance.OnRelode;
             @Relode.canceled += instance.OnRelode;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1129,6 +1166,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @Relode.started -= instance.OnRelode;
             @Relode.performed -= instance.OnRelode;
             @Relode.canceled -= instance.OnRelode;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1325,6 +1365,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnGunRotation(InputAction.CallbackContext context);
         void OnMelee(InputAction.CallbackContext context);
         void OnRelode(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
