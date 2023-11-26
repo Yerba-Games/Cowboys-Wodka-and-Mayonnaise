@@ -17,8 +17,10 @@ public class PickUpScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) <= 0.1f)
+        //Debug.Log(Vector3.Distance(transform.position, player.transform.position));
+        if (Vector3.Distance(transform.position, player.transform.position) <= 1.5f)
         {
+            Debug.Log("picked");
             PickUpSystem.AddPickup();
             Destroy(gameObject);
         }

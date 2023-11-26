@@ -493,6 +493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  lowhealt: 25
   animator: {fileID: 7547871438572724898}
 --- !u!1 &4735163132887561792
 GameObject:
@@ -535,6 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8885329685506807676}
   - component: {fileID: 1098796178258048691}
+  - component: {fileID: 6967085878661254755}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -572,6 +574,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5204788454314170313}
+--- !u!114 &6967085878661254755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384015653346716888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13f42fafb05dc924aa7a022262c8f18a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUpText: {fileID: 0}
+  HealthAddAmmount: 25
+  PickUps: 3
+  playerHealth: {fileID: 7866618732243517444}
 --- !u!1001 &4393724134126943501
 PrefabInstance:
   m_ObjectHideFlags: 0

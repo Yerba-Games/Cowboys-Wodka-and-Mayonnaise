@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] EnemysToSpawn[] enemysToSpawns;
     [SerializeField] int spawnCount=3;
+    [SerializeField] GameObject pickUp;
+    [SerializeField] Transform pickUpSpawn;
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class SpawnManager : MonoBehaviour
     }
     private void Spawn()
     {
+        Instantiate(pickUp, pickUpSpawn);
         foreach (var enemy in enemysToSpawns)
         {
             for (int i = 0; i < enemy.enemyNumber; i++)

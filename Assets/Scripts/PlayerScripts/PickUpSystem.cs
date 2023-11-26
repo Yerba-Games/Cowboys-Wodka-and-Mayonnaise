@@ -45,6 +45,7 @@ public class PickUpSystem : MonoBehaviour
     void PickUpAmmount()
     {
         PickUps++;
+        PickUpText.text = PickUps.ToString();
     }
     public static void AddPickup()
     {
