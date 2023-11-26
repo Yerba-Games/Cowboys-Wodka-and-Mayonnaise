@@ -8,9 +8,10 @@ public class PickUpSystem : MonoBehaviour
 {
     public static PickUpSystem pUS;
     Inputs inputs;
-    [SerializeField] TMP_Text PickUpText;
-    [SerializeField] int HealthAddAmmount,PickUps;
+    [SerializeField] TMP_Text pickUpText;
+    [SerializeField] int healthAddAmmount,pickUps;
     [SerializeField]private PlayerHealth playerHealth;
+    int currentHealth,maxHealth;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -29,26 +30,38 @@ public class PickUpSystem : MonoBehaviour
     }
     void Start()
     {
-        PickUpText.text = PickUps.ToString();
+        pickUpText.text = pickUps.ToString();
+
     }
 
     // Update is called once per frame
     void UsePickUp(InputAction.CallbackContext obj)
     {
-        if (PickUps != 0)
+        if (currentHealth + healthAddAmmount! <= maxHealth)
         {
-            PickUps--;
-            PickUpText.text = PickUps.ToString();
-            playerHealth.AddHealth(HealthAddAmmount);
+            if (pickUps != 0)
+            {
+                pickUps--;
+                pickUpText.text = pickUps.ToString();
+                playerHealth.AddHealth(healthAddAmmount);
+            }
         }
     }
     void PickUpAmmount()
     {
-        PickUps++;
-        PickUpText.text = PickUps.ToString();
+        pickUps++;
+        pickUpText.text = pickUps.ToString();
     }
     public static void AddPickup()
     {
         pUS.PickUpAmmount();
+    }
+    public static void SetMaxHP(int hp)
+    {
+        pUS.maxHealth = hp;
+    }
+    public static void SetHP(int hp)
+    {
+        pUS.currentHealth = hp;
     }
 }

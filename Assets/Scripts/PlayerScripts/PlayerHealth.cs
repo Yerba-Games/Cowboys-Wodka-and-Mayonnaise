@@ -16,11 +16,13 @@ public class PlayerHealth : MonoBehaviour
     {
         UI.SetMaxHP(health);
         AudioManager.instance.PlayLoop(AudioManager.instance.WorldAmbient, new Vector2(0, 0));
-
+        PickUpSystem.SetMaxHP(health);
+        PickUpSystem.SetHP(health);
     }
     public void EnemyHit(int damage)
     {
         health -= damage;
+        PickUpSystem.SetHP(health);
         UI.SetHealth(health);
         animator.SetTrigger("Hit");
         if (health <= lowhealt&&lowHealthNotPlyed!=true)
@@ -40,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health += ammount;
         UI.SetHealth(health);
+        PickUpSystem.SetHP(health);
         if (health >= lowhealt&& lowHealthNotPlyed != false)
         {
             lowHealthNotPlyed = true;
