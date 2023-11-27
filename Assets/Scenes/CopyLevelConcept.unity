@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1922.7827, g: 1859.5471, b: 1985.4631, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -814,7 +814,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42158
+  m_Name: pb_Mesh37200
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1183,7 +1183,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42372
+  m_Name: pb_Mesh37414
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1413,7 +1413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
+  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9014,7 +9014,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3045539, y: 0.045068417, z: -0.014428143, w: 0.95131886}
+  m_LocalRotation: {x: 0.30455393, y: 0.045068383, z: -0.014428131, w: 0.95131886}
   m_LocalPosition: {x: -33.103065, y: 10.003058, z: -12.563553}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10151,7 +10151,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42080
+  m_Name: pb_Mesh37122
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -12099,6 +12099,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d621d83220055ce42be609bde8c9a72f, type: 2}
   - {fileID: 11400000, guid: 7e5122625ab05e6488adfc5615e964dc, type: 2}
   spawnCount: 3
+  pickUp: []
 --- !u!4 &1237958495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8878086952973479900, guid: eca3635ed8a46934497286d5b844fc6a,
@@ -13587,7 +13588,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh42608
+  m_Name: pb_Mesh37650
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2

@@ -128,7 +128,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0.868}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8009481239262737869}
   m_Father: {fileID: 4211927823045867067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8687482671320833755
@@ -240,3 +241,97 @@ CapsuleCollider:
   m_Height: 3.489739
   m_Direction: 1
   m_Center: {x: 0.03482151, y: 1.4625041, z: 0}
+--- !u!1001 &270175081206813494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5997296958011960028}
+    m_Modifications:
+    - target: {fileID: 4021402211851140956, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_Name
+      value: Muzzle Flash Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.386
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
+        type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 43ade928dd227b94bb1b5860c50bfda9, type: 3}
+--- !u!4 &8009481239262737869 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7825213321154897659, guid: 43ade928dd227b94bb1b5860c50bfda9,
+    type: 3}
+  m_PrefabInstance: {fileID: 270175081206813494}
+  m_PrefabAsset: {fileID: 0}
