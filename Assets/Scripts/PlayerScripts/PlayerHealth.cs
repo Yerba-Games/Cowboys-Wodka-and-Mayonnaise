@@ -10,10 +10,12 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]int health=1000,lowhealt =25;
     [SerializeField] Animator animator;
     bool lowHealthNotPlyed = true;
+    int maxHP;
 
     // Update is called once per frame
     private void Start()
     {
+        maxHP = health;
         UI.SetMaxHP(health);
         AudioManager.instance.PlayLoop(AudioManager.instance.WorldAmbient, new Vector2(0, 0));
         PickUpSystem.SetMaxHP(health);
@@ -40,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void AddHealth(int ammount)
     {
-        health += ammount;
+        health=Mathf.Clamp(health+ammount,0,maxHP);
         UI.SetHealth(health);
         PickUpSystem.SetHP(health);
         if (health >= lowhealt&& lowHealthNotPlyed != false)

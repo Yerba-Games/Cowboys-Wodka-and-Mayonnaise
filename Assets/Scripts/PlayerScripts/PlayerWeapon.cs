@@ -13,7 +13,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
     [SerializeField] GameObject bullet,gunEnd;
-    [SerializeField] int magazine = 6;
+    [SerializeField] ParticleSystem particle;
+    [SerializeField] int magazine = 6,emitParticles=10;
     [SerializeField]float relodeTime=1,relodSpeedUp=0.25f;
     [SerializeField] Animator animator;
     [ShowNonSerializedField]private int currentMagazine;
@@ -73,6 +74,7 @@ public class PlayerWeapon : MonoBehaviour
         UI.AmmoChange(-1);
         Debug.Log("piu");
         Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
+        particle.Emit(10);
         AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerShotSound, this.transform.position);
         //tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward*bulletSpeed, ForceMode.Impulse);
         Relode();

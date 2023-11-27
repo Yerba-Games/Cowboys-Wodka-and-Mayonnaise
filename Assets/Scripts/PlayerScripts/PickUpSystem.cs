@@ -37,7 +37,7 @@ public class PickUpSystem : MonoBehaviour
     // Update is called once per frame
     void UsePickUp(InputAction.CallbackContext obj)
     {
-        if (currentHealth + healthAddAmmount! <= maxHealth)
+        if (currentHealth < maxHealth)
         {
             if (pickUps != 0)
             {
