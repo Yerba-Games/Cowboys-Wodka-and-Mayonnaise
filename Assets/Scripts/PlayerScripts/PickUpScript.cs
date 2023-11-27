@@ -22,7 +22,7 @@ public class PickUpScript : MonoBehaviour
         {
             Debug.Log("picked");
             PickUpSystem.AddPickup();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

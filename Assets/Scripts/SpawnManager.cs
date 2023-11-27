@@ -9,8 +9,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] EnemysToSpawn[] enemysToSpawns;
     [SerializeField] int spawnCount=3;
-    [SerializeField] GameObject pickUp;
-    [SerializeField] Transform pickUpSpawn;
+    [SerializeField] GameObject[] pickUp;
 
     private void Awake()
     {
@@ -30,7 +29,7 @@ public class SpawnManager : MonoBehaviour
     }
     private void Spawn()
     {
-        Instantiate(pickUp, pickUpSpawn);
+        pickUp[Random.Range(pickUp.Length - 1, 0)].SetActive(true);
         foreach (var enemy in enemysToSpawns)
         {
             for (int i = 0; i < enemy.enemyNumber; i++)

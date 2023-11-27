@@ -18,7 +18,9 @@ public class EnemyHealth : MonoBehaviour
         speed = enemyScriptableObject.speed;
         canMove = enemyScriptableObject.canMove;
         model = enemyScriptableObject.enemyModel;
-        Instantiate(model, transform);
+        GameObject TempModel;
+        TempModel =Instantiate(model, transform);
+        TempModel.transform.localScale = new Vector3(0.25f,0.25f,0.25f);
         //enemyModel.transform.SetParent(transform);
         
     }
