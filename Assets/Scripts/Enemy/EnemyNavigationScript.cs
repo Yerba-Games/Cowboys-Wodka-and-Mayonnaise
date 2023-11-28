@@ -8,6 +8,7 @@ public class EnemyNavigationScript : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField]EnemyScriptableObject enemyStats;
     NavMeshAgent agent;
+    public Animator animator;
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -21,5 +22,11 @@ public class EnemyNavigationScript : MonoBehaviour
     void Update()
     {
         agent.destination = player.position;
+        if (agent.acceleration != 0)
+        {
+            animator.SetBool("walk", true);
+            return;
+        }
+        animator.SetBool("walk", false);
     }
 }

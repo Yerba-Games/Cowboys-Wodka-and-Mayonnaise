@@ -1676,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10048,7 +10048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18261,7 +18261,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9000000, guid: 77f41d10b94e8de4abb6b39c24be9042, type: 3}
     - target: {fileID: 7547871438572724898, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: m_WarningMessage
@@ -20747,7 +20747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1083929334}
-  enemyStats: {fileID: 11400000, guid: 21cc17608c33f644298bde87b9b58e19, type: 2}
+  enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
 --- !u!114 &2111752596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20760,7 +20760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f058f3b9fe447ab47b30bb4eec308520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: 21cc17608c33f644298bde87b9b58e19, type: 2}
+  enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
 --- !u!114 &2111752597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20773,7 +20773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ebf1fd427eef84c9ad7eb66eab8bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyScriptableObject: {fileID: 11400000, guid: 21cc17608c33f644298bde87b9b58e19,
+  enemyScriptableObject: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756,
     type: 2}
 --- !u!4 &2111752598
 Transform:

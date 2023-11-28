@@ -50,6 +50,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756,
     type: 2}
+  animator: {fileID: 0}
+  animatorController: {fileID: 9100000, guid: 2c94f9a466ac91e4e811683ab5023c5f, type: 2}
+  avatar: {fileID: 9000000, guid: 24ef4af9bbdd4d2498218a97e7d5ed9f, type: 3}
 --- !u!114 &1161720557710131857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,13 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
-  enemyMeeleSound:
-    Guid:
-      Data1: -1655837816
-      Data2: 1329802520
-      Data3: -1506066783
-      Data4: -1437921977
-    Path: event:/IN_GAME/Enemy/Melee
+  animator: {fileID: 0}
 --- !u!114 &5844026581692109145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
+  animator: {fileID: 0}
 --- !u!195 &894244362859622606
 NavMeshAgent:
   m_ObjectHideFlags: 0

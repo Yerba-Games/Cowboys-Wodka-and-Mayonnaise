@@ -12,6 +12,7 @@ public class EnemyMelee : MonoBehaviour
     private int damage;
     private Transform playerPositon;
     private float maxDistans;
+    public Animator animator;
     private void OnEnable()
     {
        attackDelay=enemyStats.attackDelay;
@@ -61,6 +62,7 @@ public class EnemyMelee : MonoBehaviour
 
     IEnumerator Attack(GameObject target)
     {
+        animator.SetTrigger("Attack");
         Debug.Log("atacking faze 2");
         target.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
         AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyMeleeSound, this.transform.position);

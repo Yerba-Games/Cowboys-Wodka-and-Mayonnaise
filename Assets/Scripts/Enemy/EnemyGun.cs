@@ -16,6 +16,7 @@ public class EnemyGun : MonoBehaviour
     Vector3 aim;
     private bool isReloding;
     Transform playerPositon;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class EnemyGun : MonoBehaviour
     {
         if (!isReloding)
         {
+            animator.SetTrigger("shoot");
             Debug.Log("piu");
             AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyShotSound, this.transform.position);
             Instantiate(bullet, gunEnd.transform.position, gunEnd.transform.rotation);
@@ -89,6 +91,7 @@ public class EnemyGun : MonoBehaviour
     IEnumerator Reloding()
     {
         yield return new WaitForSeconds(relodeTime);
+        animator.SetTrigger("Relode");
         currentMagazine = enemyStats.magazine;
         isReloding = false;
     }

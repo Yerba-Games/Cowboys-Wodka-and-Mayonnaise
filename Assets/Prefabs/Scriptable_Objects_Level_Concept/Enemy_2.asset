@@ -18,7 +18,7 @@ MonoBehaviour:
   stopingDistance: 5
   canMove: 1
   attackDelay: 4
-  enemyModel: {fileID: 5931604073940936126, guid: 480561236c5390e419dd2af7af14552d,
+  enemyModel: {fileID: 919132149155446097, guid: a5b4c865ecfba7b4e885657ded8ac098,
     type: 3}
   CanShoot: 1
   magazine: 6
