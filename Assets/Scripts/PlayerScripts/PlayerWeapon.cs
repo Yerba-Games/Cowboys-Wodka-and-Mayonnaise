@@ -125,6 +125,7 @@ public class PlayerWeapon : MonoBehaviour
         for (int i = currentMagazine; i < magazine; i++)
         {
             animator.SetTrigger("Relode");
+            AudioManager.instance.PlayOneShot(AudioManager.instance.Reload, this.transform.position);
             while (currentTime <= relodeTime)
             {
                 currentTime += Time.deltaTime;
