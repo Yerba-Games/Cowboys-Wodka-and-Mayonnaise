@@ -10,12 +10,16 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public EventReference EnemyDeathSound;
     [SerializeField] public EventReference EnemyMeleeSound;
     [SerializeField] public EventReference EnemyShotSound;
+    [SerializeField] public EventReference EnemyVoiceOver;
     [SerializeField] public EventReference PlayerHitSound;
     [SerializeField] public EventReference PlayerDeathSound;
     [SerializeField] public EventReference PlayerLowSound;
     [SerializeField] public EventReference PlayerShotSound;
     [SerializeField] public EventReference PlayerReloadSound;
+    [SerializeField] public EventReference PlayerVoiceOver;
+    [SerializeField] public EventReference PlayerSteps;
     [SerializeField] public EventReference WorldAmbient;
+    [SerializeField] public EventReference WorldMusic;
     [SerializeField] public EventReference WorldWoodDoor;
 
     public static AudioManager instance { get; private set; }

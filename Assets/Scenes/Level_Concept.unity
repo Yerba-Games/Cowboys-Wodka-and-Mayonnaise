@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1834.895, g: 1552.0713, b: 1318.6635, a: 1}
+  m_IndirectSpecularColor: {r: 1839.544, g: 1556.176, b: 1322.1466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1676,7 +1676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10048,7 +10048,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19558,6 +19558,13 @@ MonoBehaviour:
       Data3: 1346741428
       Data4: -471182157
     Path: event:/IN_GAME/Enemy/Shoot
+  EnemyVoiceOver:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   PlayerHitSound:
     Guid:
       Data1: 1647576002
@@ -19593,6 +19600,20 @@ MonoBehaviour:
       Data3: -928990028
       Data4: -643218036
     Path: event:/IN_GAME/Player/Reload
+  PlayerVoiceOver:
+    Guid:
+      Data1: -1592297710
+      Data2: 1164344103
+      Data3: 638513541
+      Data4: -131133877
+    Path: event:/IN_GAME/Player/Voice Over
+  PlayerSteps:
+    Guid:
+      Data1: -1640796190
+      Data2: 1276492223
+      Data3: 983404964
+      Data4: -501751212
+    Path: event:/IN_GAME/Player/Steps...
   WorldAmbient:
     Guid:
       Data1: 1567030790
@@ -19600,6 +19621,13 @@ MonoBehaviour:
       Data3: 1238029960
       Data4: -435736169
     Path: event:/IN_GAME/World/Ambient
+  WorldMusic:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   WorldWoodDoor:
     Guid:
       Data1: -1694218091
@@ -20748,6 +20776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1083929334}
   enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
+  animator: {fileID: 0}
 --- !u!114 &2111752596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20761,6 +20790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
+  animator: {fileID: 0}
 --- !u!114 &2111752597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20775,6 +20805,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyScriptableObject: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756,
     type: 2}
+  animator: {fileID: 0}
+  animatorController: {fileID: 0}
+  avatar: {fileID: 0}
 --- !u!4 &2111752598
 Transform:
   m_ObjectHideFlags: 0
