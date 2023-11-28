@@ -960,11 +960,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1526964690268444965, guid: 77f41d10b94e8de4abb6b39c24be9042,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 059d379eb978de84c95e7ad61ac3d62d, type: 2}
+    - target: {fileID: -840413753332952710, guid: 77f41d10b94e8de4abb6b39c24be9042,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 428f2abbe1fa17a4fba520a5ec377743, type: 2}
     - target: {fileID: 919132149155446097, guid: 77f41d10b94e8de4abb6b39c24be9042,
         type: 3}
       propertyPath: m_Name
       value: "idle animacja r\u0119czna"
       objectReference: {fileID: 0}
+    - target: {fileID: 8417361359673230750, guid: 77f41d10b94e8de4abb6b39c24be9042,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 00a87123afe0afe458160421a4aa3a26, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
