@@ -45,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
         health=Mathf.Clamp(health+ammount,0,maxHP);
         UI.SetHealth(health);
         PickUpSystem.SetHP(health);
+        AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerHeal, this.transform.position);
         if (health >= lowhealt&& lowHealthNotPlyed != false)
         {
             lowHealthNotPlyed = true;
