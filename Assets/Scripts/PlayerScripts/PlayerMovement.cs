@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(moveForce),Time.deltaTime*40f);
         if (moveForce != Vector3.zero)
         {
-            animator.SetBool("walk",true);
+            animator.SetBool("walk", true);
+            //AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerSteps, this.transform.position);
             return;
         }
         animator.SetBool("walk", false);
