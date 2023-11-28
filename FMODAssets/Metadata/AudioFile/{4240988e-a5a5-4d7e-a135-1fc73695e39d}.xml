@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4240988e-a5a5-4d7e-a135-1fc73695e39d}">
+		<property name="assetPath">
+			<value>102437__shawshank73__scottstoked_yeehaw.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>4.7330833333333331</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{8575e400-ea7c-4f6a-811f-129683f544bc}</destination>
+		</relationship>
+	</object>
+</objects>

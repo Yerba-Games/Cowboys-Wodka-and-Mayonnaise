@@ -8,7 +8,7 @@
 			<value>Reload</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b6162aa1-cdd1-4d52-99ca-7534465115f1}</destination>
@@ -83,9 +83,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{da560c42-84a8-4ef7-90d9-440991fc84bf}">
-		<property name="volume">
-			<value>-1</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{f68ce3b1-b54e-428c-b766-31734109f77b}</destination>
 		</relationship>
@@ -98,7 +95,7 @@
 	</object>
 	<object class="MultiSound" id="{ecb7e375-9133-4ab4-9d24-1d81cd4a93b1}">
 		<relationship name="sounds">
-			<destination>{ab4ad28e-46eb-43c5-a459-4de6674a5b5d}</destination>
+			<destination>{a0718a85-58c9-47dc-9eaa-1c1200790f23}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{f1abe9a9-afdf-4920-b62e-fcf0a5ef1b66}">
@@ -131,12 +128,9 @@
 			<value>10</value>
 		</property>
 	</object>
-	<object class="SingleSound" id="{ab4ad28e-46eb-43c5-a459-4de6674a5b5d}">
-		<property name="volume">
-			<value>5</value>
-		</property>
+	<object class="SingleSound" id="{a0718a85-58c9-47dc-9eaa-1c1200790f23}">
 		<relationship name="audioFile">
-			<destination>{b6583892-2666-4251-b89a-0413ae83228c}</destination>
+			<destination>{2b8dab59-3d0d-4c79-9f5b-4abd61d7e94d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{9e58495b-0d9d-4206-8f24-2057a4588349}" />

@@ -5,7 +5,7 @@
 			<value>Red</value>
 		</property>
 		<property name="name">
-			<value>Steps...</value>
+			<value>Spawn</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -111,7 +111,7 @@
 	</object>
 	<object class="MultiSound" id="{977d854a-3649-41de-90a4-544a493c8bdd}">
 		<relationship name="sounds">
-			<destination>{5912c98d-d95f-4436-934c-05e7e8f6849c}</destination>
+			<destination>{97195c84-d129-4dfb-bee4-1b8b2fdbca93}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{c0c828f8-27e4-41af-80fc-d118a7252fe6}">
@@ -173,7 +173,11 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{04926bbc-232e-4d07-8146-3216b4002736}" />
-	<object class="MultiSound" id="{5912c98d-d95f-4436-934c-05e7e8f6849c}" />
+	<object class="SingleSound" id="{97195c84-d129-4dfb-bee4-1b8b2fdbca93}">
+		<relationship name="audioFile">
+			<destination>{4240988e-a5a5-4d7e-a135-1fc73695e39d}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{ee0d6beb-8eac-4cdc-b738-41bce9d02120}" />
 	<object class="MixerBusEffectChain" id="{85b30241-4fc9-400f-8592-30aea898d140}">
 		<relationship name="effects">

@@ -27,6 +27,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8469938292315818727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/IN_GAME/Enemy/Spawn
+  m_EditorClassIdentifier: 
+  Path: event:/IN_GAME/Enemy/Spawn
+  Guid:
+    Data1: -165276539
+    Data2: 1081386137
+    Data3: 885838981
+    Data4: 330380907
+  Banks:
+  - {fileID: 6664315968583733847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1652065654296719425}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8345209640991326417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +79,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-7891506630020557074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/IN_GAME/Player/Final Realod
+  m_EditorClassIdentifier: 
+  Path: event:/IN_GAME/Player/Final Realod
+  Guid:
+    Data1: -1362976105
+    Data2: 1123089646
+    Data3: -1645395072
+    Data4: -381858225
+  Banks:
+  - {fileID: 6664315968583733847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7731508907511928801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +148,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638349770814301121
+  lastModified: 638368000190148786
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -234,6 +289,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1652065654296719425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Spawn/EnemyWalk
+  m_EditorClassIdentifier: 
+  Name: EnemyWalk
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 4250302394
+    data2: 383402258
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-863406223070631705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,34 +337,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-43469463661970661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/IN_GAME/Enemy/Steps...
-  m_EditorClassIdentifier: 
-  Path: event:/IN_GAME/Enemy/Steps...
-  Guid:
-    Data1: -165276539
-    Data2: 1081386137
-    Data3: 885838981
-    Data4: 330380907
-  Banks:
-  - {fileID: 6664315968583733847}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: 7112166894889649784}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +361,6 @@ MonoBehaviour:
   - {fileID: 3163164257913288835}
   - {fileID: 3149341060078085458}
   - {fileID: 3429770689542311590}
-  - {fileID: -43469463661970661}
   - {fileID: 852427215833655017}
   - {fileID: -9200112821907631924}
   - {fileID: -3396987837490504683}
@@ -326,12 +376,15 @@ MonoBehaviour:
   - {fileID: 7401562739441957771}
   - {fileID: 8581950567484531367}
   - {fileID: -6056230383149028466}
+  - {fileID: 229256480469191340}
+  - {fileID: -7891506630020557074}
+  - {fileID: -8469938292315818727}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6846804799662677643}
   StringsBanks:
   - {fileID: 1487032475101596816}
-  cacheTime: 638355945039206742
+  cacheTime: 638368000190208805
   cacheVersion: 131608
 --- !u!114 &181328036155279246
 MonoBehaviour:
@@ -357,6 +410,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &229256480469191340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/IN_GAME/Player/Voice Over
+  m_EditorClassIdentifier: 
+  Path: event:/IN_GAME/Player/Voice Over
+  Guid:
+    Data1: -1592297710
+    Data2: 1164344103
+    Data3: 638513541
+    Data4: -131133877
+  Banks:
+  - {fileID: 6664315968583733847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &852427215833655017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,10 +507,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638355945039206742
+  lastModified: 638368000190158784
   FileSizes:
   - Name: Desktop
-    Value: 2044
+    Value: 2126
   Exists: 1
 --- !u!114 &1934616288327986922
 MonoBehaviour:
@@ -555,7 +635,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/MM.bank
   Name: MM
   StudioPath: bank:/MM
-  lastModified: 638349770814301121
+  lastModified: 638368000190208805
   FileSizes:
   - Name: Desktop
     Value: 3172
@@ -711,34 +791,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/InGame.bank
   Name: InGame
   StudioPath: bank:/InGame
-  lastModified: 638355945039196738
+  lastModified: 638368000190098775
   FileSizes:
   - Name: Desktop
-    Value: 3621792
-  Exists: 1
---- !u!114 &7112166894889649784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Steps.../EnemyWalk
-  m_EditorClassIdentifier: 
-  Name: EnemyWalk
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 4250302394
-    data2: 383402258
-  Type: 0
-  IsGlobal: 0
-  Labels: []
+    Value: 3751136
   Exists: 1
 --- !u!114 &7401562739441957771
 MonoBehaviour:
