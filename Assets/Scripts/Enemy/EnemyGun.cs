@@ -16,7 +16,7 @@ public class EnemyGun : MonoBehaviour
     Vector3 aim;
     private bool isReloding;
     Transform playerPositon;
-    public Animator animator;
+    [SerializeField] Animator animator;
     // Start is called before the first frame update
     void Start()
     {

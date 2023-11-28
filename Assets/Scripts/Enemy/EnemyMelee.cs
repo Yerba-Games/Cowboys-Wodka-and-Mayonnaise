@@ -12,7 +12,7 @@ public class EnemyMelee : MonoBehaviour
     private int damage;
     private Transform playerPositon;
     private float maxDistans;
-    public Animator animator;
+    [SerializeField]Animator animator;
     private void OnEnable()
     {
        attackDelay=enemyStats.attackDelay;

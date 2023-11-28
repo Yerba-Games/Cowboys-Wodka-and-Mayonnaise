@@ -8,7 +8,7 @@ public class EnemyNavigationScript : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField]EnemyScriptableObject enemyStats;
     NavMeshAgent agent;
-    public Animator animator;
+    [SerializeField] Animator animator;
     // Start is called before the first frame update
     void OnEnable()
     {
