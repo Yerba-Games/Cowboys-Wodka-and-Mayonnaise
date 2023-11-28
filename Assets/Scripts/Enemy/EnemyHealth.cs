@@ -28,12 +28,14 @@ public class EnemyHealth : MonoBehaviour
         animator.runtimeAnimatorController = animatorController;
         GetComponent<EnemyHealth>().animator = animator;
         GetComponent<EnemyNavigationScript>().animator = animator;
-        if (TryGetComponent<EnemyGun>(out EnemyGun component))
+        if (gameObject.GetComponentInChildren<EnemyGun>()!=null)
         {
-            component.animator = animator;
-            return;
+            gameObject.GetComponentInChildren<EnemyGun>().animator = animator;
         }
-        GetComponent<EnemyMelee>().animator = animator;
+        if (TryGetComponent<EnemyMelee>(out EnemyMelee component1))
+        {
+            component1.animator = animator;
+        }
         
 
         //enemyModel.transform.SetParent(transform);

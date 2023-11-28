@@ -22,7 +22,7 @@ public class EnemyNavigationScript : MonoBehaviour
     void Update()
     {
         agent.destination = player.position;
-        if (agent.acceleration != 0)
+        if (agent.velocity.magnitude >0.15f)
         {
             animator.SetBool("walk", true);
             return;

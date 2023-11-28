@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
 using FMODUnity;
+using UnityEngine.Animations;
 
 //Jeba�em si� z tym 4 godziny ale dzia�a wiec lepeij tu ju� nic nie zmienia�
 
@@ -152,6 +153,7 @@ public class PlayerWeapon : MonoBehaviour
             // Ignore the height difference.
             if (!aimToY) {direction.y = 0; }
             transform.forward = direction;
+            //animator.SetIKRotation(AvatarIKGoal.RightHand,);
             aimGuide.SetPosition(0,transform.position);
             aimGuide.SetPosition(1, GetMousePosition().position);
         }
