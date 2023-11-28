@@ -147,7 +147,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638368069333535874
+  lastModified: 638368077820414629
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -388,32 +388,8 @@ MonoBehaviour:
   - {fileID: -6846804799662677643}
   StringsBanks:
   - {fileID: 1487032475101596816}
-  cacheTime: 638368069338512057
+  cacheTime: 638368077820645012
   cacheVersion: 131608
---- !u!114 &181328036155279246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Steps.../PlayerWalk
-  m_EditorClassIdentifier: 
-  Name: PlayerWalk
-  StudioPath: 
-  Min: 0
-  Max: 3
-  Default: 0
-  ID:
-    data1: 1499677337
-    data2: 2790326267
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &229256480469191340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,11 +467,10 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters:
-  - {fileID: 181328036155279246}
+  Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 735
 --- !u!114 &1487032475101596816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,10 +486,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638368069333555879
+  lastModified: 638368077820424632
   FileSizes:
   - Name: Desktop
-    Value: 2158
+    Value: 2104
   Exists: 1
 --- !u!114 &1934616288327986922
 MonoBehaviour:
@@ -639,7 +614,7 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/MM.bank
   Name: MM
   StudioPath: bank:/MM
-  lastModified: 638368069338512057
+  lastModified: 638368077820645012
   FileSizes:
   - Name: Desktop
     Value: 240352
@@ -795,10 +770,10 @@ MonoBehaviour:
   Path: FMODAssets/Build/Desktop/InGame.bank
   Name: InGame
   StudioPath: bank:/InGame
-  lastModified: 638368069333495874
+  lastModified: 638368077820379327
   FileSizes:
   - Name: Desktop
-    Value: 3793696
+    Value: 3792512
   Exists: 1
 --- !u!114 &7401562739441957771
 MonoBehaviour:

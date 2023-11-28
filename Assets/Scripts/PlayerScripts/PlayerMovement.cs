@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveForce != Vector3.zero)
         {
             animator.SetBool("walk", true);
-            //AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerSteps, this.transform.position);
+            AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerSteps, this.transform.position);
             return;
         }
         animator.SetBool("walk", false);
