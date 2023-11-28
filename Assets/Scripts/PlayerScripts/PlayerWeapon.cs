@@ -113,6 +113,7 @@ public class PlayerWeapon : MonoBehaviour
         if (currentMagazine < magazine)
         {
             currentTime += relodSpeedUp;
+            animator.SetFloat("RelodeSpeed", animator.GetFloat("RelodeSpeed")+relodSpeedUp);
             //CorutineStop(ref RelodeCorutine);
             CorutinStart(ref RelodeCorutine);
         }
@@ -137,6 +138,7 @@ public class PlayerWeapon : MonoBehaviour
             
         }
         RelodeCorutine = null;
+        animator.SetFloat("RelodeSpeed", 1);
     }
     #endregion
     #region aiming

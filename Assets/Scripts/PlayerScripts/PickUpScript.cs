@@ -10,8 +10,8 @@ public class PickUpScript : MonoBehaviour
     void Start()
     {
         player = PlayerGetTransform.playerTransform;
-        //transform.DORotate(new Vector3(0, 360, 0), 1, RotateMode.Fast).SetLoops(-1,LoopType.Restart).SetEase(Ease.Linear) ;
-        //transform.DOMove(new Vector3(0, 2, 0), 1).SetLoops(-1,LoopType.Restart);
+        transform.DORotate(new Vector3(0, 180, 0), 1, RotateMode.Fast).SetLoops(-1,LoopType.Restart).SetEase(Ease.Linear) ;
+        transform.DOMoveY(transform.position.y+0.5f, 1).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.Linear);
     }
 
     // Update is called once per frame

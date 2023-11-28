@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
-using UnityEngine.Windows;
+using DG.Tweening;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
         //movement
         Vector3 moveForce = new Vector3(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         rb.velocity = moveForce * Speed;
-        if (moveForce != new Vector3(0, 0, 0))
+        transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(moveForce),Time.deltaTime*40f);
+        if (moveForce != Vector3.zero)
         {
             animator.SetBool("walk",true);
             return;

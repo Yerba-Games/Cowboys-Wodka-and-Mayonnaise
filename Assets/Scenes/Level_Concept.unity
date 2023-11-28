@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1839.544, g: 1556.176, b: 1322.1466, a: 1}
+  m_IndirectSpecularColor: {r: 1834.895, g: 1552.0713, b: 1318.6635, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18217,6 +18217,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4842416960457648350, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842416960457648350, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842416960457648350, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5384015653346716888, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: m_Name
@@ -18241,6 +18256,16 @@ PrefabInstance:
         type: 3}
       propertyPath: healthAddAmmount
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547871438572724898, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7547871438572724898, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7866618732243517444, guid: 85385d98b935d934080af7accd925d62,
         type: 3}

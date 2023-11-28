@@ -8,7 +8,7 @@ public class EnemyGun : MonoBehaviour
     private bool canAttack = true;
     bool aimToY = false;
     [SerializeField]GameObject bullet, gunEnd;
-    int magazine = 6, relodeTime = 2;
+    int relodeTime = 2;
     [ShowNonSerializedField] private int currentMagazine;
     [SerializeField] EnemyScriptableObject enemyStats;
     private int attackDelay;
@@ -20,10 +20,10 @@ public class EnemyGun : MonoBehaviour
     void Start()
     {
         playerPositon = PlayerGetTransform.playerTransform;
-        attackDelay=enemyStats.attackDelay;
-        magazine = enemyStats.magazine;
+        attackDelay = enemyStats.attackDelay;
         relodeTime=enemyStats.relodeTime;
         maxDistans = enemyStats.maxShootingDistans;
+        currentMagazine = enemyStats.magazine;
     }
 
     // Update is called once per frame
@@ -89,7 +89,7 @@ public class EnemyGun : MonoBehaviour
     IEnumerator Reloding()
     {
         yield return new WaitForSeconds(relodeTime);
-        currentMagazine = magazine;
+        currentMagazine = enemyStats.magazine;
         isReloding = false;
     }
     #endregion

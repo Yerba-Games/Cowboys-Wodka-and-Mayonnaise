@@ -15,8 +15,8 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     { 
         health = enemyScriptableObject.health;
-        speed = enemyScriptableObject.speed;
-        canMove = enemyScriptableObject.canMove;
+        //speed = enemyScriptableObject.speed;
+        //canMove = enemyScriptableObject.canMove;
         model = enemyScriptableObject.enemyModel;
         GameObject TempModel;
         TempModel =Instantiate(model, transform);

@@ -13,24 +13,21 @@ public class bulletScript : MonoBehaviour
     // Update is called once per frame
     private void Start()
     {
-        speed=bulletStats.speed;
-        damage=bulletStats.damage;
-        isPlayersBullet = bulletStats.isPlayersBullet;
         rb.drag = 0;
-        rb.velocity = speed * transform.forward;
+        rb.velocity = bulletStats.speed * transform.forward;
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (isPlayersBullet)
+        if (bulletStats.isPlayersBullet)
         {
-            collision.gameObject.SendMessage("Hit", damage, SendMessageOptions.DontRequireReceiver);
+            collision.gameObject.SendMessage("Hit", bulletStats.damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
             Debug.Log($@"{gameObject.name} hit");
             return;
         }
-        if (!isPlayersBullet)
+        if (!bulletStats.isPlayersBullet)
         {
-            collision.gameObject.SendMessage("EnemyHit", damage, SendMessageOptions.DontRequireReceiver);
+            collision.gameObject.SendMessage("EnemyHit", bulletStats.damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);
             Debug.Log($@"{gameObject.name} hit");
             return;
