@@ -22,13 +22,13 @@ public class StartTrigerScript : MonoBehaviour
             {
                 go.transform.DORotate(new Vector3(0, 0, 0), 1);
                 AudioManager.instance.PlayOneShot(AudioManager.instance.WorldWoodDoor, this.transform.position);
-                AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerVoiceOver, this.transform.position);
             }
             foreach (GameObject go in StartEnemies)
             {
                 go.GetComponent<NavMeshAgent>().enabled = true;
                 go.GetComponent<EnemyNavigationScript>().enabled = true;
                 go.GetComponent<EnemyMelee>().enabled = true;
+                AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerVoiceOver, this.transform.position);
             }
             gameObject.SetActive(false);
         }
