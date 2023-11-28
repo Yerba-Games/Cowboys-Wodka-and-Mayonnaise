@@ -22,6 +22,7 @@ public class PickUpScript : MonoBehaviour
         {
             Debug.Log("picked");
             PickUpSystem.AddPickup();
+            AudioManager.instance.PlayOneShot(AudioManager.instance.PickUpSound, this.transform.position);
             gameObject.SetActive(false);
         }
     }

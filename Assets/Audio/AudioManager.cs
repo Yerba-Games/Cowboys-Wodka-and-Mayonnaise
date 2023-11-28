@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public EventReference PlayerDeathSound;
     [SerializeField] public EventReference LastReload;
     [SerializeField] public EventReference Reload;
+    [SerializeField] public EventReference PickUpSound;
     [SerializeField] public EventReference PlayerHeal;
     [SerializeField] public EventReference PlayerLowSound;
     [SerializeField] public EventReference PlayerShotSound;
