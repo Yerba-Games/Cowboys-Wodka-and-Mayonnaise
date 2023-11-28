@@ -6,6 +6,7 @@ using FMODUnity;
 public class AudioManager : MonoBehaviour
 {
 
+    [SerializeField] public EventReference MenuMusic;
     [SerializeField] public EventReference EnemyHitSound;
     [SerializeField] public EventReference EnemyDeathSound;
     [SerializeField] public EventReference EnemyMeleeSound;
