@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760b902209d0dc24f96c8b4a59e84320, type: 3}
   m_Name: Enemy_2
   m_EditorClassIdentifier: 
-  health: 40
+  health: 80
   damage: 2
   speed: 3.1
   stopingDistance: 5

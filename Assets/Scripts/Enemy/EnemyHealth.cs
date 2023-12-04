@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField]EnemyScriptableObject enemyScriptableObject;
     [ProgressBar("Health", 100, EColor.Red)][ShowNonSerializedField] int health;
     [SerializeField] Animator animator;
+    [SerializeField] ParticleSystem particle;
     GameObject model;
 
     // Start is called before the first frame update
@@ -49,9 +50,11 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
         animator.SetTrigger("Hit");
+        particle.Emit(10);
         AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyHitSound, this.transform.position);
         if (health <= 0)
         {
+            particle.Emit(20);
             animator.SetTrigger("Dead");
             AudioManager.instance.PlayOneShot(AudioManager.instance.EnemyDeathSound, this.transform.position);
             EnemiesManager.EnemyDies();
