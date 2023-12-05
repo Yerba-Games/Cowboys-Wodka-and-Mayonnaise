@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
     //�ycie proste jest jak budowa T-55, bo jestem i�ynierem trzymam zaci�ni�t� pi��
     [SerializeField]int health=1000,lowhealt =25;
     [SerializeField] Animator animator;
+    [SerializeField] ParticleSystem particle;
     bool lowHealthNotPlyed = true;
     int maxHP;
 
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         PickUpSystem.SetHP(health);
         UI.SetHealth(health);
         animator.SetTrigger("Hit");
+        particle.Emit(20);
         if (health <= lowhealt&&lowHealthNotPlyed!=true)
         {
             lowHealthNotPlyed=false;
