@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class UIButtons : MonoBehaviour
 {
+    
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
@@ -12,5 +13,13 @@ public class UIButtons : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void Change(GameObject image)
+    {
+        image.SetActive(false);
+    }
+    public void Hide(GameObject button)
+    {
+        button.SetActive(false);
     }
 }

@@ -282,6 +282,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2303158c6af8d4d83827f07ea7b532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FNAF:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   MenuMusic:
     Guid:
       Data1: -1048388731
@@ -1802,7 +1809,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level_Concept
+          m_StringArgument: Story
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2138962687
