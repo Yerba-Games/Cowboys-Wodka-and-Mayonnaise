@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -8,20 +9,26 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] EnemysToSpawn[] enemysToSpawns;
     [SerializeField] int spawnCount=3;
     [SerializeField] GameObject[] pickUp;
+    [SerializeField] TMP_Text waveProgres;
+    int maxSpawns;
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
+        maxSpawns = spawnCount;
+        waveProgres.text = $@"{spawnCount+  1}/{maxSpawns+1}";
     }
     public static bool SpawnEnemies()
     {
         if (instance.spawnCount >= 0)
         {
             instance.spawnCount--;
+            instance.waveProgres.text = $@"{instance.spawnCount+1}/{instance.maxSpawns+1}";
             instance.Spawn();
             return true;
         }
+        instance.waveProgres.text = $@"{instance.spawnCount+1}/{instance.maxSpawns+1}";
         GM.ActivateBossFight();
         return false;
     }
