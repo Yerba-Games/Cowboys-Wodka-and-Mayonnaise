@@ -9,7 +9,11 @@ public class UIButtons : MonoBehaviour
 {
     [SerializeField] GameObject[] images;
     [SerializeField] Sprite[] sprites;
+    [SerializeField] GameObject textField;
+    [SerializeField] string[] storyText;
     [SerializeField] bool useSprites = true;
+    private typewriterUI type;
+    private string toType;
     int index,maxIndex;
     [SerializeField, EnableIf("useSprites")] Image storyBoard;
     [SerializeField] string SceneName,endText;
@@ -26,6 +30,8 @@ public class UIButtons : MonoBehaviour
         }
         maxIndex=sprites.Length - 1;
         storyBoard.sprite = sprites[index];
+        type = textField.GetComponent<typewriterUI>();
+        
     }
     void LoadScene(string sceneName)
     {
@@ -54,7 +60,8 @@ public class UIButtons : MonoBehaviour
             if (index > maxIndex - 2) { ChangeText(button); }
             index++;
             storyBoard.sprite = sprites[index];
-            
+            type.writer = storyText[index];
+            type.Write();
             return;
         }
         LoadScene(SceneName);

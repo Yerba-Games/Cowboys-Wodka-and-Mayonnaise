@@ -6,6 +6,7 @@ public class EnemyNavigationScript : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField]EnemyScriptableObject enemyStats;
     NavMeshAgent agent;
+    [SerializeField] ParticleSystem dustParticle;
     [SerializeField] Animator animator;
     // Start is called before the first frame update
     void OnEnable()
@@ -23,6 +24,7 @@ public class EnemyNavigationScript : MonoBehaviour
         if (agent.velocity.magnitude >0.15f)
         {
             animator.SetBool("walk", true);
+            dustParticle.Emit(1);
             return;
         }
         animator.SetBool("walk", false);

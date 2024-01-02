@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemyStats: {fileID: 11400000, guid: ee7773063fd86434592d61eb44672756, type: 2}
+  dustParticle: {fileID: 4205664011881191116}
   animator: {fileID: 3159342567242376273}
 --- !u!195 &894244362859622606
 NavMeshAgent:
@@ -128,6 +129,86 @@ CapsuleCollider:
   m_Height: 2.91
   m_Direction: 1
   m_Center: {x: 0.00000011920929, y: 1.1478909, z: 0}
+--- !u!1001 &4932996552444681142
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 9022981129002384939}
+    m_Modifications:
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131157969835077249, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+        type: 3}
+      propertyPath: m_Name
+      value: Dust
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 161e5409b9886c24fa12f0b7ec6c3122, type: 3}
+--- !u!198 &4205664011881191116 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 9090519251917442426, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+    type: 3}
+  m_PrefabInstance: {fileID: 4932996552444681142}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8764116333166485477 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4455717427575473235, guid: 161e5409b9886c24fa12f0b7ec6c3122,
+    type: 3}
+  m_PrefabInstance: {fileID: 4932996552444681142}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6897402257993279090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -313,7 +394,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 56054bb96fb20674a8df80c271408dde, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24ef4af9bbdd4d2498218a97e7d5ed9f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8764116333166485477}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24ef4af9bbdd4d2498218a97e7d5ed9f, type: 3}
 --- !u!95 &3159342567242376273 stripped
