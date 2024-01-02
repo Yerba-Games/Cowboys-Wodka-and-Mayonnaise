@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using NaughtyAttributes;
-
 public class PlayerMovement : MonoBehaviour
 {
     Inputs inputs; //popiêcie do klasy z inputem
-    [SerializeField][Foldout("Settings")] float speed = 5;
+    [SerializeField][Foldout("Settings")] float speed = 5,rotateSpeed=10;
     [SerializeField] Animator animator;
     [SerializeField] PlayerWeapon weaponScript;
     private Rigidbody rb;
@@ -45,10 +44,10 @@ public class PlayerMovement : MonoBehaviour
         //movement
         Vector3 moveForce = new Vector3(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         rb.velocity = moveForce * speed;
-        //transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(moveForce),Time.deltaTime*40f);
+
         if (moveForce != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(moveForce);
+            transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(moveForce),Time.deltaTime*rotateSpeed);
             animator.SetBool("walk", true);
             AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerSteps, this.transform.position);
             return;
