@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField][Foldout("Settings")] float speed = 5,rotateSpeed=10;
     [SerializeField] Animator animator;
     [SerializeField] PlayerWeapon weaponScript;
+    [SerializeField] ParticleSystem dustParticle;
     private Rigidbody rb;
     private InputAction move; //odbiera input z akcji move
     // Start is called before the first frame update
@@ -44,11 +45,13 @@ public class PlayerMovement : MonoBehaviour
         //movement
         Vector3 moveForce = new Vector3(move.ReadValue<Vector2>().x, 0, move.ReadValue<Vector2>().y);
         rb.velocity = moveForce * speed;
+        
 
         if (moveForce != Vector3.zero)
         {
             transform.rotation=Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(moveForce),Time.deltaTime*rotateSpeed);
             animator.SetBool("walk", true);
+            dustParticle.Emit(1);
             AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerSteps, this.transform.position);
             return;
         }
