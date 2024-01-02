@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using NaughtyAttributes;
 
 public class UIButtons : MonoBehaviour
 {
     [SerializeField] GameObject[] images;
+    [SerializeField] Sprite[] sprites;
+    [SerializeField] bool useSprites = true;
     int index,maxIndex;
+    [SerializeField, EnableIf("useSprites")] Image storyBoard;
     [SerializeField] string SceneName,endText;
     private void OnDisable()
     {
@@ -15,7 +19,13 @@ public class UIButtons : MonoBehaviour
     }
     private void Start()
     {
-        maxIndex=images.Length-1;
+        if (!useSprites)
+        {
+            maxIndex = images.Length - 1;
+            return;
+        }
+        maxIndex=sprites.Length - 1;
+        storyBoard.sprite = sprites[index];
     }
     void LoadScene(string sceneName)
     {
@@ -33,6 +43,18 @@ public class UIButtons : MonoBehaviour
             images[index].SetActive(false);
             index++;
             images[index].SetActive(true);
+            return;
+        }
+        LoadScene(SceneName);
+    }
+    public void ChangeSprite(GameObject button)
+    {
+        if (index < maxIndex)
+        {
+            if (index > maxIndex - 2) { ChangeText(button); }
+            index++;
+            storyBoard.sprite = sprites[index];
+            
             return;
         }
         LoadScene(SceneName);
