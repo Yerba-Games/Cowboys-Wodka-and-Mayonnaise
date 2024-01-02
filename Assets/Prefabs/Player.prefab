@@ -453,8 +453,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38dbb5076787cfd4a89ba1a57f18e860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  speed: 5
   animator: {fileID: 7547871438572724898}
+  weaponScript: {fileID: 0}
 --- !u!54 &2420673079278715604
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -497,6 +498,7 @@ MonoBehaviour:
   health: 100
   lowhealt: 25
   animator: {fileID: 7547871438572724898}
+  particle: {fileID: 0}
 --- !u!1 &4735163132887561792
 GameObject:
   m_ObjectHideFlags: 0

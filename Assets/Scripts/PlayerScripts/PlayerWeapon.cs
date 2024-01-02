@@ -11,15 +11,15 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private LineRenderer aimGuide;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] bool aimToY = false;
-    [SerializeField] GameObject bullet,gunEnd;
+    [SerializeField] GameObject bullet, gunEnd;
     [SerializeField] ParticleSystem particle;
-    [SerializeField] int magazine = 6,emitParticles=10;
-    [SerializeField]float relodeTime=1,relodSpeedUp=0.25f;
+    [SerializeField] int magazine = 6, emitParticles = 10;
+    [SerializeField] float relodeTime = 1, relodSpeedUp = 0.25f;
     [SerializeField] Animator animator;
-    [ShowNonSerializedField]private int currentMagazine;
+    [ShowNonSerializedField] private int currentMagazine;
     Coroutine RelodeCorutine;
     private Camera mainCamera;
-    float currentTime=0;
+    float currentTime = 0;
     Inputs inputs; //popi�cie do klasy z inputem
     private InputAction mousePositon;
     #region Input ini
@@ -32,7 +32,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         inputs.Player.Enable();
         mousePositon = inputs.Player.GunRotation;
-        inputs.Player.Fire.performed+= CheckShoot;
+        inputs.Player.Fire.performed += CheckShoot;
         inputs.Player.Relode.performed += PlayerRelode;
 
     }
@@ -56,7 +56,7 @@ public class PlayerWeapon : MonoBehaviour
     #region shooting and reloding
     void CheckShoot(InputAction.CallbackContext obj)
     {
-        if (RelodeCorutine!=null && currentMagazine > 0)
+        if (RelodeCorutine != null && currentMagazine > 0)
         {
             CorutineStop(ref RelodeCorutine);
         }
@@ -64,7 +64,7 @@ public class PlayerWeapon : MonoBehaviour
     }
     void Shoot()
     {
-        if(currentMagazine <= 0)
+        if (currentMagazine <= 0)
         {
             return;
         }
@@ -80,7 +80,7 @@ public class PlayerWeapon : MonoBehaviour
     }
     private void Relode()
     {
-        if (currentMagazine<= 0)
+        if (currentMagazine <= 0)
         {
             //CorutineStop(ref RelodeCorutine);
             CorutinStart(ref RelodeCorutine);
@@ -88,10 +88,10 @@ public class PlayerWeapon : MonoBehaviour
     }
     bool CorutinStart(ref Coroutine coroutine/*,IEnumerator enumerato*/)
     {
-        if (coroutine == null) 
+        if (coroutine == null)
         {
             coroutine = StartCoroutine(Reloding());
-            return true; 
+            return true;
         }
 
         return false;
@@ -112,7 +112,7 @@ public class PlayerWeapon : MonoBehaviour
         if (currentMagazine < magazine)
         {
             currentTime += relodSpeedUp;
-            animator.SetFloat("RelodeSpeed", animator.GetFloat("RelodeSpeed")+relodSpeedUp);
+            animator.SetFloat("RelodeSpeed", animator.GetFloat("RelodeSpeed") + relodSpeedUp);
             //CorutineStop(ref RelodeCorutine);
             CorutinStart(ref RelodeCorutine);
         }
@@ -122,8 +122,8 @@ public class PlayerWeapon : MonoBehaviour
         //dzwięk i animacja startu przeładowania
         for (int i = currentMagazine; i < magazine; i++)
         {
-            animator.SetTrigger("Relode");
-            AudioManager.instance.PlayOneShot(AudioManager.instance.Reload, this.transform.position);
+            animator.SetTrigger("Relode");//animacja pojedyńczego bulleta
+            AudioManager.instance.PlayOneShot(AudioManager.instance.Reload, this.transform.position);//tu dzwięk przeładowania pojedyńczeko bulleta
             while (currentTime <= relodeTime)
             {
                 currentTime += Time.deltaTime;
@@ -133,9 +133,6 @@ public class PlayerWeapon : MonoBehaviour
             currentMagazine++;
             Debug.Log(currentMagazine);
             UI.AmmoChange(1);
-            //tu dzwięk przeładowania pojedyńczeko bulleta
-            //animacja pojedyńczego bulleta
-            
         }
         RelodeCorutine = null;
         animator.SetFloat("RelodeSpeed", 1);
@@ -150,14 +147,18 @@ public class PlayerWeapon : MonoBehaviour
             // Calculate the direction
             var direction = position - transform.position;
             // Ignore the height difference.
-            if (!aimToY) {direction.y = 0; }
+            if (!aimToY) { direction.y = 0; }
             transform.forward = direction;
             //animator.SetIKRotation(AvatarIKGoal.RightHand,);
-            aimGuide.SetPosition(0,transform.position);
+            aimGuide.SetPosition(0, transform.position);
             aimGuide.SetPosition(1, GetMousePosition().position);
         }
     }
-
+    
+    public Vector3 GTMP()
+    {
+        return GetMousePosition().position;
+    }
     private (bool success, Vector3 position) GetMousePosition()
     {
         var ray = mainCamera.ScreenPointToRay(mousePositon.ReadValue<Vector2>());
