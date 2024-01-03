@@ -11,6 +11,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject[] bullets;
     [SerializeField] TMP_Text ammoText,healthText;
     [SerializeField] Slider healthSlider;
+    [SerializeField] GameObject gameOverUI;
 
     private void Awake()
     {
@@ -55,6 +56,17 @@ public class UI : MonoBehaviour
         healthSlider.maxValue = hp;
         healthSlider.value = hp;
         healthText.text = hp.ToString();
+    }
+    #endregion
+    #region GameOverUI
+    public static void GameOver()
+    {
+        ui.ActivateGameOverUI();
+    }
+    private void ActivateGameOverUI()
+    {
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
     }
     #endregion
 }

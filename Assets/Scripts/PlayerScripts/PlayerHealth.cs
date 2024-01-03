@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
             AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerDeathSound, this.transform.position);
             animator.SetTrigger("Dead");
             gameObject.SetActive(false);
+            UI.GameOver();
         }
         //I bang moge skurwysyn�w nokautowa� rozpierdalam czo�gi lekko ja i moja za�oga
     }
