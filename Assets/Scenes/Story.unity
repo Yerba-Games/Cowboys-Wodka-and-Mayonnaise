@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.80057, g: 324.3278, b: 429.24698, a: 1}
+  m_IndirectSpecularColor: {r: 262.38358, g: 325.10843, b: 430.30963, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tmpProText: {fileID: 510701489}
-  writer: "Miasto Opentane przez bandyt\xF3w"
+  writer: In Wild West Town
   delayBeforeStart: 0
   timeBtwChars: 0.1
   leadingChar: 
@@ -905,11 +905,11 @@ MonoBehaviour:
   textField: {fileID: 510701487}
   storyText:
   - TO JEST TEST 1
-  - Tu nie wiem co napisac
-  - Od lat opuszczone przez dobrych ludzi
-  - Do teraz
-  - Nieznany Cowboy obije to miasto
-  - "Przy pomocy rewolwera i w\xF3dki"
+  - Under bandits control
+  - It was abounded by good people
+  - Until now
+  - Unknow gunslingher had came to town
+  - To fight with his iron and vodka
   useSprites: 1
   storyBoard: {fileID: 691498880}
   SceneName: Level_Concept
