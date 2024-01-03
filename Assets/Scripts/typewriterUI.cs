@@ -17,6 +17,7 @@ public class typewriterUI : MonoBehaviour
 	[SerializeField] float timeBtwChars = 0.1f;
 	[SerializeField] string leadingChar = "";
 	[SerializeField] bool leadingCharBeforeDelay = false;
+	Coroutine typing;
 
     private void Start()
     {
@@ -26,14 +27,20 @@ public class typewriterUI : MonoBehaviour
     // Use this for initialization
     public void Write()
 	{
+		if (typing != null)
+        {
+            StopCoroutine(typing);
+            typing = null;
+        }
 		_tmpProText.text = "";
-		StartCoroutine("TypeWriterTMP");
+		typing = StartCoroutine("TypeWriterTMP");
 	}
 
 
 
 	IEnumerator TypeWriterTMP()
     {
+		
         _tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
 
         yield return new WaitForSeconds(delayBeforeStart);
