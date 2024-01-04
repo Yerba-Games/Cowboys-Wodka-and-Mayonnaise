@@ -1,12 +1,8 @@
-// Script for having a typewriter effect for UI
-// Prepared by Nick Hwang (https://www.youtube.com/nickhwang)
-// Want to get creative? Try a Unicode leading character(https://unicode-table.com/en/blocks/block-elements/)
-// Copy Paste from page into Inpector
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class typewriterUI : MonoBehaviour
 {
@@ -38,7 +34,7 @@ public class typewriterUI : MonoBehaviour
 
 
 
-	IEnumerator TypeWriterTMP()
+	IEnumerator OLDTypeWriterTMP()
     {
 		
         _tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
@@ -61,4 +57,54 @@ public class typewriterUI : MonoBehaviour
 			_tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
 		}
 	}
+
+    IEnumerator TypeWriterTMP()
+    {
+        bool specialChar=false;
+        _tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
+        char[] write = writer.ToCharArray();
+        yield return new WaitForSeconds(delayBeforeStart);
+        for(int i =0; i <= write.Length-1; i++)
+        {
+            //if (_tmpProText.text.Length > 0)
+            //{
+            //    _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+            //}
+            if (specialChar) { specialChar = false; continue; }
+            if (write[i].ToString()==@"\")
+            {
+                switch (write[i].ToString() + write[i + 1].ToString()) 
+                {
+                    case @"\n":
+                        _tmpProText.text += "\n";
+                        break;
+                    case @"\\":
+                        _tmpProText.text += "\\";
+                        break;
+                    case @"\r":
+                        _tmpProText.text += "\r";
+                        break;
+                    case @"\t":
+                        _tmpProText.text += "\t";
+                        break;
+                    case "\"":
+                        _tmpProText.text += "\"";
+                        break;
+                    case @"\'":
+                        _tmpProText.text += "\'";
+                        break;
+                }
+                specialChar = true;
+                continue;
+            }
+            _tmpProText.text += write[i];
+            _tmpProText.text += leadingChar;
+            yield return new WaitForSeconds(timeBtwChars);
+        }
+
+        if (leadingChar != "")
+        {
+            _tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length - leadingChar.Length);
+        }
+    }
 }
