@@ -7,6 +7,7 @@ public class GM : MonoBehaviour
 {
     //[SerializeField] GameObject bossDoor;
     [SerializeField] GameObject[] Door;
+    [SerializeField] EndGuider endGuider;
     #region Singleton
     private static GM _instance;
     public static GM Instance => _instance;
@@ -32,6 +33,7 @@ public class GM : MonoBehaviour
         {
             go.transform.DORotate(new Vector3(0, 120, 0), 1);
         }
+        endGuider.Guide();
         //bossDoor.SetActive(true);
     }
 }
