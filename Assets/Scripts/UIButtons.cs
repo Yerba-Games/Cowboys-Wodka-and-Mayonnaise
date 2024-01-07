@@ -23,6 +23,9 @@ public class UIButtons : MonoBehaviour
     }
     private void Start()
     {
+
+        AudioManager.instance.PlayOneShot(AudioManager.instance.StorySound, this.transform.position);
+
         if (!useSprites)
         {
             maxIndex = images.Length - 1;
@@ -62,6 +65,7 @@ public class UIButtons : MonoBehaviour
             storyBoard.sprite = sprites[index];
             type.writer = storyText[index];
             type.Write();
+            AudioManager.instance.PlayOneShot(AudioManager.instance.StorySound, this.transform.position);
             return;
         }
         LoadScene(SceneName);
