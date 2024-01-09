@@ -6860,7 +6860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10551,6 +10551,7 @@ GameObject:
   - component: {fileID: 590731677}
   - component: {fileID: 590731681}
   - component: {fileID: 590731682}
+  - component: {fileID: 590731683}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10757,7 +10758,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10811,6 +10812,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 321049585}
+--- !u!114 &590731683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590731676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae78c4d8cdf68d241af11172e4a5072d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 279631482}
+  intensity: 0
+  shake: 0
 --- !u!4 &597041759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7911842687839414495, guid: 85385d98b935d934080af7accd925d62,
@@ -19421,6 +19437,7 @@ GameObject:
   - component: {fileID: 1661644771}
   - component: {fileID: 1661644770}
   - component: {fileID: 1661644769}
+  - component: {fileID: 1661644772}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -19510,6 +19527,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1661644772
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661644767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: e9ce97b7a206dc64d90931ea044e0c72, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1685301949
 GameObject:
   m_ObjectHideFlags: 0
@@ -19952,6 +19986,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.225
       objectReference: {fileID: 0}
+    - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 590731683}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: pickUps

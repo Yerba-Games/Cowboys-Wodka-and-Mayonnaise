@@ -12,11 +12,12 @@ public class PickUpSystem : MonoBehaviour
     Inputs inputs;
     [SerializeField] TMP_Text pickUpText;
     [SerializeField] int healthAddAmmount,pickUps,drunkTime,sobberingTime,drunkAddDelay=50;
-    [SerializeField] float addDrunknesValue; //Set by dev, defines how much to add
+    [SerializeField] float addDrunknesValue,maxShake=1.4f,addShake=0.03f; //Set by dev, defines how much to add
     [SerializeField]private PlayerHealth playerHealth;
     [SerializeField] Volume drunknesVolume;
+    [SerializeField] CameraDrunSwing camera;
     int currentHealth,maxHealth;
-    float addDrunknes;// private addDrunknes for definig the clamp
+    float addDrunknes, shake=0;// private addDrunknes for definig the clamp
     Coroutine addDrunknesCorutine,decreseDrunknesCorutine;
     // Start is called before the first frame update
     private void Awake()
@@ -53,6 +54,7 @@ public class PickUpSystem : MonoBehaviour
                 pickUpText.text = pickUps.ToString();
                 playerHealth.AddHealth(healthAddAmmount);
                 addDrunknes += addDrunknesValue;
+                shake += maxShake;
                 if(addDrunknesCorutine!=null) { StopCoroutine(addDrunknesCorutine); addDrunknesCorutine = StartCoroutine(AddDrunknes());return; }
                 addDrunknesCorutine = StartCoroutine(AddDrunknes());
                 //drunknesVolume.weight += addDrunknes;
@@ -68,12 +70,14 @@ public class PickUpSystem : MonoBehaviour
     }
     IEnumerator AddDrunknes()
     {
+        camera.shake = true;
         int iterations = 0;
         while(drunknesVolume.weight<addDrunknes)
         {
             iterations++;
             Debug.Log($@"iteration:{iterations}");
             drunknesVolume.weight =Mathf.Clamp(drunknesVolume.weight+ (addDrunknes/ drunkAddDelay),0,addDrunknes);
+            camera.intensity = Mathf.Clamp(camera.intensity + addShake, 0, shake);
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(drunkTime);
@@ -88,10 +92,12 @@ public class PickUpSystem : MonoBehaviour
             iterations++;
             Debug.Log($@"iteration:{iterations}");
             drunknesVolume.weight = Mathf.Clamp(drunknesVolume.weight - (addDrunknes / drunkAddDelay), 0, addDrunknes);
+            camera.intensity = Mathf.Clamp(camera.intensity-addShake,0,shake);
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(sobberingTime);
-        addDrunknes = 0;
+        shake = 0;
+        camera.shake = false;
         decreseDrunknesCorutine = null;
     }
     //IEnumerator Drunkness()
