@@ -77,7 +77,7 @@ public class PickUpSystem : MonoBehaviour
             iterations++;
             Debug.Log($@"iteration:{iterations}");
             drunknesVolume.weight =Mathf.Clamp(drunknesVolume.weight+ (addDrunknes/ drunkAddDelay),0,addDrunknes);
-            camera.intensity = Mathf.Clamp(camera.intensity + addShake, 0, shake);
+            camera.intensity = Mathf.Clamp(camera.intensity + (shake/addShake), 0, shake);
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(drunkTime);
@@ -92,7 +92,7 @@ public class PickUpSystem : MonoBehaviour
             iterations++;
             Debug.Log($@"iteration:{iterations}");
             drunknesVolume.weight = Mathf.Clamp(drunknesVolume.weight - (addDrunknes / drunkAddDelay), 0, addDrunknes);
-            camera.intensity = Mathf.Clamp(camera.intensity-addShake,0,shake);
+            camera.intensity = Mathf.Clamp(camera.intensity-(shake/addShake),0,shake);
             yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(sobberingTime);
