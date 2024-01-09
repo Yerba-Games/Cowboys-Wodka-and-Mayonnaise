@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1839.544, g: 1556.176, b: 1322.1466, a: 1}
+  m_IndirectSpecularColor: {r: 1834.895, g: 1552.0713, b: 1318.6635, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6860,7 +6860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279631481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10757,7 +10757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 590731676}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.44327164, y: 0.0020756016, z: -0.0010264073, w: 0.89638436}
+  m_LocalRotation: {x: 0.44327164, y: 0.0020756326, z: -0.0010264226, w: 0.89638436}
   m_LocalPosition: {x: -35.732033, y: 15.709181, z: -10.375416}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19960,7 +19960,7 @@ PrefabInstance:
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: drunkTime
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
@@ -19979,9 +19979,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
+      propertyPath: sobberingTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
       propertyPath: drunknesVolume
       value: 
       objectReference: {fileID: 685592502}
+    - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
+        type: 3}
+      propertyPath: addDrunknesValue
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: healthAddAmmount
@@ -21660,9 +21670,9 @@ RectTransform:
   - {fileID: 908833021}
   m_Father: {fileID: 600921666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -70, y: -360}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -70, y: 180}
   m_SizeDelta: {x: 2096, y: 376}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1945155865
