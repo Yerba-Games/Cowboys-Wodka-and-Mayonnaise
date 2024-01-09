@@ -935,7 +935,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 634.6369, y: 115.90253}
-  m_SizeDelta: {x: 1314.9214, y: 230.6802}
+  m_SizeDelta: {x: 1314.9214, y: 233.6802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221692364
 MonoBehaviour:
@@ -1109,6 +1109,7 @@ MonoBehaviour:
   - Unknow gunslingher had came to town
   - To fight with his iron and vodka
   useSprites: 1
+  playSoundAtStart: 0
   storyBoard: {fileID: 691498880}
   SceneName: Level_Concept
   endText: Play
