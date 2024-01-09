@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1834.895, g: 1552.0713, b: 1318.6635, a: 1}
+  m_IndirectSpecularColor: {r: 1839.544, g: 1556.176, b: 1322.1466, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19960,7 +19960,7 @@ PrefabInstance:
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: drunkTime
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
@@ -19975,7 +19975,7 @@ PrefabInstance:
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
       propertyPath: addDrunknes
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6967085878661254755, guid: 85385d98b935d934080af7accd925d62,
         type: 3}
