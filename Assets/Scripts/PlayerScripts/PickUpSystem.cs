@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.HighDefinition;
 
 public class PickUpSystem : MonoBehaviour
 {
     public static PickUpSystem pUS;
     Inputs inputs;
     [SerializeField] TMP_Text pickUpText;
-    [SerializeField] int healthAddAmmount,pickUps;
+    [SerializeField] int healthAddAmmount,pickUps,drunkTime;
+    [SerializeField] float addDrunknes;
     [SerializeField]private PlayerHealth playerHealth;
+    [SerializeField] Volume drunknesVolume;
     int currentHealth,maxHealth;
+    Coroutine drunkResset;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -44,8 +49,22 @@ public class PickUpSystem : MonoBehaviour
                 pickUps--;
                 pickUpText.text = pickUps.ToString();
                 playerHealth.AddHealth(healthAddAmmount);
+                drunknesVolume.weight += addDrunknes;
+                if (drunkResset != null)
+                {
+                    StopCoroutine(drunkResset);
+                    drunkResset = StartCoroutine(Drunkness());
+                    return;
+                }
+                drunkResset = StartCoroutine(Drunkness());
             }
         }
+    }
+    IEnumerator Drunkness()
+    {
+        yield return new WaitForSeconds(drunkTime);
+        drunknesVolume.weight = 0;
+        drunkResset = null;
     }
     void PickUpAmmount()
     {
