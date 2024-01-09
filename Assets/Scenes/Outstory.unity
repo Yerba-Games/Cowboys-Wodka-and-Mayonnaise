@@ -298,11 +298,18 @@ MonoBehaviour:
     Path: 
   StorySound:
     Guid:
-      Data1: 1960957105
-      Data2: 1332903423
-      Data3: 763314309
-      Data4: 1597781463
-    Path: event:/IN_GAME/STORY/StorySound
+      Data1: 548893567
+      Data2: 1141772981
+      Data3: -1536047732
+      Data4: -1263556469
+    Path: event:/IN_GAME/STORY/StoryOutSound
+  StoryOutSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &411461936
 Transform:
   m_ObjectHideFlags: 0
@@ -1115,7 +1122,7 @@ MonoBehaviour:
   - He wont, you had lied to yourself again, you are drunk
   - But you are happy, at least
   useSprites: 1
-  playSoundAtStart: 0
+  playSoundAtStart: 1
   storyBoard: {fileID: 691498880}
   SceneName: EndLevel
   endText: The End

@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public EventReference WorldMusic;
     [SerializeField] public EventReference WorldWoodDoor;
     [SerializeField] public EventReference StorySound;
+    [SerializeField] public EventReference StoryOutSound;
 
 
     public static AudioManager instance { get; private set; }
