@@ -11,7 +11,7 @@ public class UIButtons : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     [SerializeField] GameObject textField;
     [SerializeField] string[] storyText;
-    [SerializeField] bool useSprites = true;
+    [SerializeField] bool useSprites = true,playSoundAtStart=false;
     private typewriterUI type;
     private string toType;
     int index,maxIndex;
@@ -24,7 +24,10 @@ public class UIButtons : MonoBehaviour
     private void Start()
     {
 
-        AudioManager.instance.PlayOneShot(AudioManager.instance.StorySound, this.transform.position);
+        if (playSoundAtStart)
+        {
+            PlayStartSound();
+        }
 
         if (!useSprites)
         {
@@ -43,6 +46,10 @@ public class UIButtons : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    void PlayStartSound()
+    {
+        AudioManager.instance.PlayOneShot(AudioManager.instance.StorySound, this.transform.position);
     }
     public void Change(GameObject button)
     {
