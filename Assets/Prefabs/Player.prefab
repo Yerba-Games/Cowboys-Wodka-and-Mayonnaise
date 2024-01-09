@@ -439,7 +439,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.05, y: -0.05, z: 0}
 --- !u!114 &6244365104675178516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -595,7 +595,15 @@ MonoBehaviour:
   pickUpText: {fileID: 0}
   healthAddAmmount: 0
   pickUps: 0
+  drunkTime: 0
+  sobberingTime: 0
+  drunkAddDelay: 50
+  addDrunknesValue: 0
+  maxShake: 1.4
+  addShake: 0.03
   playerHealth: {fileID: 7866618732243517444}
+  drunknesVolume: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1001 &478671437176529829
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,17 +860,17 @@ PrefabInstance:
     - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0
+      value: -35.722218
       objectReference: {fileID: 0}
     - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 0
+      value: -0.007981372
       objectReference: {fileID: 0}
     - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 0
+      value: 0.005416827
       objectReference: {fileID: 0}
     - target: {fileID: 9101890806044092867, guid: 43ade928dd227b94bb1b5860c50bfda9,
         type: 3}
