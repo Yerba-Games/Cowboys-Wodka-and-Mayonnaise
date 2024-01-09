@@ -303,6 +303,13 @@ MonoBehaviour:
       Data3: 763314309
       Data4: 1597781463
     Path: event:/IN_GAME/STORY/StorySound
+  StoryOutSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &411461936
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,7 +1116,7 @@ MonoBehaviour:
   - Unknow gunslingher had came to town
   - To fight with his iron and vodka
   useSprites: 1
-  playSoundAtStart: 0
+  playSoundAtStart: 1
   storyBoard: {fileID: 691498880}
   SceneName: Level_Concept
   endText: Play
