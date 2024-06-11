@@ -18,7 +18,7 @@ public class bulletScript : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (bulletStats.isPlayersBullet)
+        if (bulletStats.isPlayersBullet)//this is made to prevent shooting your self, same for enemies
         {
             collision.gameObject.SendMessage("Hit", bulletStats.damage, SendMessageOptions.DontRequireReceiver);
             Destroy(gameObject);

@@ -23,10 +23,11 @@ public class PlayerHealth : MonoBehaviour
     public void EnemyHit(int damage)
     {
         health -= damage;
-        PickUpSystem.SetHP(health);
-        UI.SetHealth(health);
+        PickUpSystem.SetHP(health);//Yep pickup system stores it's own health for player. might change later
+        UI.SetHealth(health); //UI shit
         animator.SetTrigger("Hit");
         particle.Emit(20);
+        //MUSIC STUFF
         if (health <= lowhealt&&lowHealthNotPlyed!=true)
         {
             lowHealthNotPlyed=false;
@@ -43,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void AddHealth(int ammount)
     {
-        health=Mathf.Clamp(health+ammount,0,maxHP);
+        health=Mathf.Clamp(health+ammount,0,maxHP); //so we don't have more health than we should
         UI.SetHealth(health);
         PickUpSystem.SetHP(health);
         AudioManager.instance.PlayOneShot(AudioManager.instance.PlayerHeal, this.transform.position);

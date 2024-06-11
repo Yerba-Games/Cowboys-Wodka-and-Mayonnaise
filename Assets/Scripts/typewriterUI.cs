@@ -60,7 +60,7 @@ public class typewriterUI : MonoBehaviour
 
     IEnumerator TypeWriterTMP()
     {
-        bool specialChar=false;
+        bool specialChar=false; //for example if we did not use it if we have "example\t shit" then the output will be: "example    t shit" 
         _tmpProText.text = leadingCharBeforeDelay ? leadingChar : "";
         char[] write = writer.ToCharArray();
         yield return new WaitForSeconds(delayBeforeStart);
@@ -73,7 +73,8 @@ public class typewriterUI : MonoBehaviour
             if (specialChar) { specialChar = false; continue; }
             if (write[i].ToString()==@"\")
             {
-                switch (write[i].ToString() + write[i + 1].ToString()) 
+                //this hell of a switch let's you use special characters in inspector and expect code like output on screen
+                switch (write[i].ToString() + write[i + 1].ToString())
                 {
                     case @"\n":
                         _tmpProText.text += "\n";

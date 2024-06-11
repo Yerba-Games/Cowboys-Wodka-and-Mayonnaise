@@ -20,6 +20,7 @@ public class PickUpSystem : MonoBehaviour
     float addDrunknes, shake=0;// private addDrunknes for definig the clamp
     Coroutine addDrunknesCorutine,decreseDrunknesCorutine;
     // Start is called before the first frame update
+    #region SartUp
     private void Awake()
     {
         pUS = this;
@@ -38,10 +39,8 @@ public class PickUpSystem : MonoBehaviour
     void Start()
     {
         pickUpText.text = pickUps.ToString();
-
-
     }
-
+    #endregion
     // Update is called once per frame
     void UsePickUp(InputAction.CallbackContext obj)
     {
