@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
         if (instance == null)
             instance = this;
         maxSpawns = spawnCount;
-        if (EndLessTriger.endless = true)//for endless mode
+        if (EndLessTriger.endless == true)//for endless mode
         {
             waveProgres.text="0";
             isEndless = true;

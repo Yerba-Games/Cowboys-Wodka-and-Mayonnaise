@@ -56,6 +56,7 @@ public class PauseManager : MonoBehaviour
         if (name != null)
         {
             SceneManager.LoadScene(name);
+            EndLessTriger.endless=false;
             Resume();
         }
     }

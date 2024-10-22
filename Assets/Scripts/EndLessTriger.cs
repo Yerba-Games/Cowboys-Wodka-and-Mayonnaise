@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndLessTriger : MonoBehaviour
 {
     public static EndLessTriger instance;
-    public static bool endless;
+    public static bool endless=false;
     private void Awake()
     {
         if (instance == null)
