@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     }
     public static bool SpawnEnemies()
     {
-        if (instance.isEndless=false)
+        if (instance.isEndless==false)
         {
             if (instance.spawnCount >= 0)
             {
